@@ -4,6 +4,9 @@
 
 * [Node.js](https://nodejs.org/en/)
 * [Angular CLI](https://cli.angular.io)
+
+* Ladda ner och installera [Node.js](https://nodejs.org/en/) från nodejs.org
+* Öppna konsollen och skriv "npm install -g @angular/cli" för att installera Angular CLI
   
   
 ### Installation av applikation: 
