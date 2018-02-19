@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,6 +12,7 @@ import { ScoreBoardComponent } from './score-board/score-board.component';
 import { ResultComponent } from './result/result.component';
 import { AboutComponent } from './about/about.component';
 
+import { HttpService } from '../app/quiz/quiz.service';
 
 const appRoutes: Routes = [
   { path: '', component: LandingComponent },
@@ -29,12 +31,14 @@ const appRoutes: Routes = [
     ScoreBoardComponent,
     ResultComponent,
     AboutComponent
+
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
