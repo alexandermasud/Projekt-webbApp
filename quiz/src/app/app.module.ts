@@ -13,6 +13,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { ScoreBoardComponent } from './score-board/score-board.component';
 import { ResultComponent } from './result/result.component';
 import { AboutComponent } from './about/about.component';
+import { IntroComponent } from './intro/intro.component';
 
 // Applikationens API service
 import { HttpService } from '../app/quiz/quiz.service';
@@ -21,7 +22,7 @@ import { HttpService } from '../app/quiz/quiz.service';
 const appRoutes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'quiz', component: QuizComponent },
-  //{ path: 'result', component: ResultComponent},
+  {path: 'intro', component: IntroComponent},
   { path: 'about', component: AboutComponent},
 ];
 
@@ -34,7 +35,8 @@ const appRoutes: Routes = [
     QuizComponent,
     ScoreBoardComponent,
     ResultComponent,
-    AboutComponent
+    AboutComponent,
+    IntroComponent
 
   ],
   imports: [
