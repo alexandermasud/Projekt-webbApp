@@ -17,11 +17,13 @@ import { IntroComponent } from './intro/intro.component';
 
 // Applikationens API service
 import { HttpService } from '../app/quiz/quiz.service';
+import { QuizSetupComponent } from './quiz-setup/quiz-setup.component';
 
 // Routes för applikationen
 const appRoutes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'quiz', component: QuizComponent },
+  { path: 'quizsetup', component: QuizSetupComponent },
   { path: 'intro', component: IntroComponent},
   { path: 'about', component: AboutComponent},
   { path: 'scoreboard', component: ScoreBoardComponent},
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     ScoreBoardComponent,
     ResultComponent,
     AboutComponent,
-    IntroComponent
+    IntroComponent,
+    QuizSetupComponent
 
   ],
   imports: [
