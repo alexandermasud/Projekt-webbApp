@@ -8,7 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class QuizSetupComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   gameMode: number;
   // Anger om kategorier och svårighetsgrad ska synas på html
@@ -46,7 +46,7 @@ export class QuizSetupComponent implements OnInit {
 
   ngOnInit() {
     // Hämtar via URL ut om användaren tryckte 1 eller 2 player
-    this.gameMode = this.route.snapshot.params.playermode;
+    this.gameMode = this.activatedRoute.snapshot.params.playermode;
     console.log(this.gameMode);
   }
 

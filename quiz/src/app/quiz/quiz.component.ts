@@ -32,7 +32,7 @@ export class QuizComponent implements OnInit {
 
 
 
-  constructor(private httpService: HttpService, public router: Router, private route: ActivatedRoute) { }
+  constructor(private httpService: HttpService, public router: Router, private activatedRoute: ActivatedRoute) { }
 
 
   endGame() {
@@ -54,7 +54,6 @@ export class QuizComponent implements OnInit {
   }
 
   loopQuestions() {
-
 
     let data = JSON.parse(this.getData);
     let questions: any[] = [];
@@ -93,16 +92,14 @@ export class QuizComponent implements OnInit {
     else {
       this.currentRound++;
       this.playGame();
-
     }
-
   }
 
   playGame() {
+    let i: number = this.currentRound;
+    this.currentQuestion = this.allQuestions[i];
+    this.currentAnswer = this.allAnswers[i];
 
-    let round: number = this.currentRound;
-    this.currentQuestion = this.allQuestions[round];
-    console.log(this.currentQuestion);
   }
   onPostScoreboard(scoreBoardAnswer) {
     if (scoreBoardAnswer) {
@@ -113,8 +110,8 @@ export class QuizComponent implements OnInit {
   }
   ngOnInit() {
     // Hämtar via URL ut vilken kategori och svårighetsgrad spelaren valde
-    this.choosenCategory = this.route.snapshot.params.category;
-    this.choosenDifficulty = this.route.snapshot.params.difficulty;
+    this.choosenCategory = this.activatedRoute.snapshot.params.category;
+    this.choosenDifficulty = this.activatedRoute.snapshot.params.difficulty;
 
     this.onGetQuiz();
   }
