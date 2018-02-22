@@ -15,6 +15,7 @@ export class QuizComponent implements OnInit {
   allAnswers: any[];
 
   currentRound: number = 0;
+  endAtRound: number = 5;
   htmlRound: number = 1;
   currentQuestion: string;
   currentAnswer: string;
@@ -26,6 +27,11 @@ export class QuizComponent implements OnInit {
   constructor(private httpService: HttpService) { }
 
 
+  endGame(){
+
+    console.log('SLUT!');
+
+  }
 
   onGetQuiz(){
     this.httpService.getQuestions()
@@ -69,8 +75,15 @@ export class QuizComponent implements OnInit {
 
       console.log('SCORE: ' + this.playerScore);
 
-      this.currentRound++;
-      this.playGame();
+      if(this.endAtRound-1 == this.currentRound){
+        this.endGame();
+      }
+      else{
+        this.currentRound++;
+        this.playGame();
+
+      }
+
     }
 
   playGame(){
