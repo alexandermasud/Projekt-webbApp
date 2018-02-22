@@ -27,6 +27,8 @@ export class QuizComponent implements OnInit {
   showResult: boolean = false;
   showGame: boolean = true;
 
+  inputCorrect: string = null;
+
 
   constructor(private httpService: HttpService, public router: Router) { }
 
@@ -75,10 +77,11 @@ export class QuizComponent implements OnInit {
       this.currentPlayerAnswer = buttonAnswer
       if(this.currentPlayerAnswer == this.currentAnswer){
         this.playerScore++;
-        alert("Du svarade rätt!");
+        this.inputCorrect = 'Right!';
+        
       }
       else{
-        alert("Du svarade fel...");
+          this.inputCorrect = 'Wrong!';
       }
 
       console.log('SCORE: ' + this.playerScore);
@@ -104,7 +107,7 @@ export class QuizComponent implements OnInit {
   }
   onPostScoreboard(scoreBoardAnswer){
     if(scoreBoardAnswer){
-    
+
       this.router.navigate(['scoreboard']);
 
     }else{
