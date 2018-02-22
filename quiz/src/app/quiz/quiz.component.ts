@@ -10,7 +10,10 @@ export class QuizComponent implements OnInit {
 
 
   getData: string;
-
+  firstQuestion: string;
+  firstAnswer: string;
+  playerAnswer: string;
+  
   constructor(private httpService: HttpService) { }
 
 
@@ -28,6 +31,8 @@ export class QuizComponent implements OnInit {
  
 
   loopQuestions(){
+
+    
     let data = JSON.parse(this.getData);
     let questions:any[] = []; 
     let answers:any[] = [];
@@ -39,6 +44,21 @@ export class QuizComponent implements OnInit {
     }
     console.log("Fråga " + questions);
     console.log("Svar " + answers);
+    this.firstQuestion = questions[0];
+    this.firstAnswer = answers[0];
+    
+  }
+    clickTrueFalse(playerAnswer){
+      if(this.playerAnswer == this.firstAnswer){
+        alert("Du svarade rätt!");
+      }
+      else{
+        alert("Du svarade fel...");
+      }
+    }
+
+  playGame(){
+
   }
 
   ngOnInit() {
