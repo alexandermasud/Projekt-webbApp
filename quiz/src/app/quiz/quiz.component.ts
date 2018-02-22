@@ -19,6 +19,8 @@ export class QuizComponent implements OnInit {
   currentAnswer: string;
   currentPlayerAnswer: string;
 
+  htmlRound: number = 1;
+
   constructor(private httpService: HttpService) { }
 
 
@@ -71,6 +73,7 @@ export class QuizComponent implements OnInit {
     let round: number = this.currentRound;
     this.currentQuestion = this.allQuestions[round];
     console.log(this.currentQuestion);
+    this.htmlRound++;
 
   }
 
