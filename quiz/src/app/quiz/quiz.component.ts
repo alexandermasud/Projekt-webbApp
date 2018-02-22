@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './quiz.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-quiz',
@@ -23,13 +24,20 @@ export class QuizComponent implements OnInit {
 
   playerScore: number = 0;
 
+  showResult: boolean = false;
+  showGame: boolean = true;
 
-  constructor(private httpService: HttpService) { }
+
+  constructor(private httpService: HttpService, public router: Router) { }
 
 
   endGame(){
 
     console.log('SLUT!');
+    this.showGame = false;
+    this.showResult = true;
+
+
 
   }
 
@@ -93,6 +101,15 @@ export class QuizComponent implements OnInit {
     console.log(this.currentQuestion);
     this.htmlRound++;
 
+  }
+  onPostScoreboard(scoreBoardAnswer){
+    if(scoreBoardAnswer){
+    
+      this.router.navigate(['scoreboard']);
+
+    }else{
+      this.router.navigate(['intro']);
+    }
   }
 
   ngOnInit() {

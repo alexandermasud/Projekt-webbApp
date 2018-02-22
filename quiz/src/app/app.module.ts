@@ -22,8 +22,9 @@ import { HttpService } from '../app/quiz/quiz.service';
 const appRoutes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'quiz', component: QuizComponent },
-  {path: 'intro', component: IntroComponent},
+  { path: 'intro', component: IntroComponent},
   { path: 'about', component: AboutComponent},
+  { path: 'scoreboard', component: ScoreBoardComponent},
 ];
 
 @NgModule({

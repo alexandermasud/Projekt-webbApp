@@ -1,8 +1,21 @@
 
+
+
+<div *ngIf="showGame">
+
 <h3>Question {{htmlRound}}</h3>
-
-
 <p [innerHTML]="currentQuestion"></p>
 
 <button id="True" value="True" (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)">True</button>
 <button id="False" value="False" (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)">False</button>
+</div>
+
+
+<div *ngIf="showResult">
+  <h2>Du fick {{ playerScore }} poäng!</h2>
+
+  <h3>Post on scoreboard?</h3>
+
+  <button (click)="scoreBoardAnswer = true; onPostScoreboard(scoreBoardAnswer)">Yes</button>
+  <button (click)="scoreBoardAnswer = false; onPostScoreboard(scoreBoardAnswer)">No</button>
+</div>
