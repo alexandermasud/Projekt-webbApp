@@ -1,11 +1,18 @@
-<div *ngIf="showCategory">
-<p>NU VISAS KATEGORIERNA</p>
-<!-- SKRIV KATEGORIKOD HÄR -->
 
-<button (click)="showNext()">TRYCK!</button>
+
+<div *ngIf="showCategory">
+
+<!-- SKRIV KATEGORI HTML HÄR -->
+<button (click)="category='9'; setCategory(category)">GENERAL</button>
+<button (click)="category='21'; setCategory(category)">SPORTS</button>
+<button (click)="category='23'; setCategory(category)">HISTORY</button>
 </div>
 
+
 <div *ngIf="showDifficulty">
-<p>NU VISAS DIFFICULTY</p>
-<!-- SKRIV SVÅRIGHETSKOD HÄR -->
+
+<!-- SKRIV SVÅRIGHETSGRAD HTML HÄR -->
+<button (click)="difficulty='hard'; setDifficulty(difficulty)">HARD</button>
+<button (click)="difficulty='medium'; setDifficulty(difficulty)">MEDIUM</button>
+<button (click)="difficulty='easy'; setDifficulty(difficulty)">EASY</button>
 </div>

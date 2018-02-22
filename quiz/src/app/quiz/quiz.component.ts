@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './quiz.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-quiz',
@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
 })
 export class QuizComponent implements OnInit {
 
+  choosenCategory: string;
+  choosenDifficulty: string;
+
+  playerMode: string;
 
   getData: string;
 
@@ -17,7 +21,6 @@ export class QuizComponent implements OnInit {
 
   currentRound: number = 0;
   endAtRound: number = 5;
-  htmlRound: number = 1;
   currentQuestion: string;
   currentAnswer: string;
   currentPlayerAnswer: string;
@@ -27,15 +30,13 @@ export class QuizComponent implements OnInit {
   showResult: boolean = false;
   showGame: boolean = true;
 
-  inputCorrect: string = null;
 
 
-  constructor(private httpService: HttpService, public router: Router) { }
+  constructor(private httpService: HttpService, public router: Router, private route: ActivatedRoute) { }
 
 
-  endGame(){
+  endGame() {
 
-    console.log('SLUT!');
     this.showGame = false;
     this.showResult = true;
 
@@ -43,23 +44,23 @@ export class QuizComponent implements OnInit {
 
   }
 
-  onGetQuiz(){
-    this.httpService.getQuestions()
+  onGetQuiz() {
+    this.httpService.getQuestions(this.choosenCategory, this.choosenDifficulty)
       .subscribe(
-        data => this.getData = JSON.stringify(data),
-        error => alert(error),
-        () => this.loopQuestions()
+      data => this.getData = JSON.stringify(data),
+      error => alert(error),
+      () => this.loopQuestions()
       );
-    }
+  }
 
-  loopQuestions(){
+  loopQuestions() {
 
 
     let data = JSON.parse(this.getData);
-    let questions:any[] = [];
-    let answers:any[] = [];
+    let questions: any[] = [];
+    let answers: any[] = [];
     //console.log(data);
-    for(let i = 0; i < data.results.length; i++){
+    for (let i = 0; i < data.results.length; i++) {
 
       questions.push(data.results[i].question);
       answers.push(data.results[i].correct_answer);
@@ -73,51 +74,48 @@ export class QuizComponent implements OnInit {
     this.currentAnswer = this.allAnswers[0];
   }
 
-    clickTrueFalse(buttonAnswer){
-      this.currentPlayerAnswer = buttonAnswer
-      if(this.currentPlayerAnswer == this.currentAnswer){
-        this.playerScore++;
-        this.inputCorrect = 'Right!';
-        
-      }
-      else{
-          this.inputCorrect = 'Wrong!';
-      }
+  clickTrueFalse(buttonAnswer) {
+    this.currentPlayerAnswer = buttonAnswer
+    if (this.currentPlayerAnswer == this.currentAnswer) {
+      this.playerScore++;
+      console.log('Right!');
 
-      console.log('SCORE: ' + this.playerScore);
+    }
+    else {
+      console.log('WRONG!')
+    }
 
-      if(this.endAtRound-1 == this.currentRound){
-        this.endGame();
-      }
-      else{
-        this.currentRound++;
-        this.playGame();
+    console.log('SCORE: ' + this.playerScore);
 
-      }
+    if (this.endAtRound - 1 == this.currentRound) {
+      this.endGame();
+    }
+    else {
+      this.currentRound++;
+      this.playGame();
 
     }
 
-  playGame(){
+  }
+
+  playGame() {
 
     let round: number = this.currentRound;
     this.currentQuestion = this.allQuestions[round];
     console.log(this.currentQuestion);
-    this.htmlRound++;
-
   }
-  onPostScoreboard(scoreBoardAnswer){
-    if(scoreBoardAnswer){
-
+  onPostScoreboard(scoreBoardAnswer) {
+    if (scoreBoardAnswer) {
       this.router.navigate(['scoreboard']);
-
-    }else{
+    } else {
       this.router.navigate(['intro']);
     }
   }
-
   ngOnInit() {
+    // Hämtar via URL ut vilken kategori och svårighetsgrad spelaren valde
+    this.choosenCategory = this.route.snapshot.params.category;
+    this.choosenDifficulty = this.route.snapshot.params.difficulty;
+
     this.onGetQuiz();
-
   }
-
 }

@@ -7,9 +7,9 @@ export class HttpService {
 
   constructor(private httpClient: HttpClient){}
 
-  getQuestions(){
+  getQuestions(category,difficulty){
 
-    return this.httpClient.get('https://opentdb.com/api.php?amount=5&category=9&difficulty=easy&type=boolean')
+    return this.httpClient.get('https://opentdb.com/api.php?amount=5&category='+ category +'&difficulty='+ difficulty +'&type=boolean')
       .map(
         (data) => {
           return data;

@@ -3,13 +3,13 @@
 
 <div *ngIf="showGame">
 
-<h3>Question {{htmlRound}} - {{inputCorrect}}</h3>
+<h3>Question {{currentRound + 1}}</h3>
 <p [innerHTML]="currentQuestion"></p>
 
-<button id="True" value="True" (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)">True</button>
-<button id="False" value="False" (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)">False</button>
+<button (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)">True</button>
+<button (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)">False</button>
 
-
+</div>
 
 
 <div *ngIf="showResult">
