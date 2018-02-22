@@ -1,7 +1,8 @@
 
 <h3>Question 1</h3>
-<p>{{firstQuestion}}</p>
+<p>{{currentQuestion}}</p>
 
-<button id="True" value="True" (click)="playerAnswer = 'True'; clickTrueFalse(playerAnswer)">True</button>
-<button id="False" value="False" (click)="playerAnswer = 'False'; clickTrueFalse(playerAnswer)">False</button>
+<p>{{currentAnswer}}</p>
 
+<button id="True" value="True" (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)">True</button>
+<button id="False" value="False" (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)">False</button>

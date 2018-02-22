@@ -10,10 +10,10 @@ export class QuizComponent implements OnInit {
 
 
   getData: string;
-  firstQuestion: string;
-  firstAnswer: string;
-  playerAnswer: string;
-  
+  currentQuestion: string;
+  currentAnswer: string;
+  currentPlayerAnswer: string;
+
   constructor(private httpService: HttpService) { }
 
 
@@ -27,29 +27,27 @@ export class QuizComponent implements OnInit {
       );
     }
 
-
- 
-
   loopQuestions(){
 
-    
+
     let data = JSON.parse(this.getData);
-    let questions:any[] = []; 
+    let questions:any[] = [];
     let answers:any[] = [];
     console.log(data);
     for(let i = 0; i < data.results.length; i++){
-      
+
       questions.push(data.results[i].question);
       answers.push(data.results[i].correct_answer);
     }
     console.log("Fråga " + questions);
     console.log("Svar " + answers);
-    this.firstQuestion = questions[0];
-    this.firstAnswer = answers[0];
-    
+    this.currentQuestion = questions[0];
+    this.currentAnswer = answers[0];
+
   }
-    clickTrueFalse(playerAnswer){
-      if(this.playerAnswer == this.firstAnswer){
+    clickTrueFalse(buttonAnswer){
+      this.currentPlayerAnswer = buttonAnswer
+      if(this.currentPlayerAnswer == this.currentAnswer){
         alert("Du svarade rätt!");
       }
       else{
