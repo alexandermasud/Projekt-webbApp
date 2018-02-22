@@ -15,11 +15,13 @@ export class QuizComponent implements OnInit {
   allAnswers: any[];
 
   currentRound: number = 0;
+  htmlRound: number = 1;
   currentQuestion: string;
   currentAnswer: string;
   currentPlayerAnswer: string;
 
-  htmlRound: number = 1;
+  playerScore: number = 0;
+
 
   constructor(private httpService: HttpService) { }
 
@@ -58,11 +60,14 @@ export class QuizComponent implements OnInit {
     clickTrueFalse(buttonAnswer){
       this.currentPlayerAnswer = buttonAnswer
       if(this.currentPlayerAnswer == this.currentAnswer){
+        this.playerScore++;
         alert("Du svarade rätt!");
       }
       else{
         alert("Du svarade fel...");
       }
+
+      console.log('SCORE: ' + this.playerScore);
 
       this.currentRound++;
       this.playGame();

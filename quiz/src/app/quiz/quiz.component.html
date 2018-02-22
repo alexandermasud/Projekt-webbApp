@@ -1,8 +1,8 @@
 
 <h3>Question {{htmlRound}}</h3>
-<p>{{currentQuestion}}</p>
 
-<p>{{currentAnswer}}</p>
+
+<p [innerHTML]="currentQuestion"></p>
 
 <button id="True" value="True" (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)">True</button>
 <button id="False" value="False" (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)">False</button>
