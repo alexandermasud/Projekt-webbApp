@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 body{
   background-image:url(/assets/background.jpg);
+  background-attachment: fixed;
+  background-size: 100% 100%;;
+  background-size: cover;
+  -moz-background-size: cover;  /* Firefox 3.6 */
+  background-position: center;  /* Internet Explorer 7/8 */
+  background-repeat: no-repeat;
 }
