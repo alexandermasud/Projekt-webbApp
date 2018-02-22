@@ -4,22 +4,17 @@ body{
 img{
   display: block;
   margin: 0 auto;
-  width: 20%;
-  height: 20%;
+  width: 25%;
+  height: 25%;
 }
 
-.container  {
-}
 
 .jumbotron{
   background-color: white;
-  opacity: 0.5;
-  width: 50%;
+  opacity: 0.4;
+  width: 80%;
   float: none;
   margin: 0 auto;
 }
 
-h1{
-  text-align: center;
-  color: white;
-}
+

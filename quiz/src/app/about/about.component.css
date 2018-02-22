@@ -1,15 +1,14 @@
-.container  {
+.btn{
+  padding: 20px;
+  margin: 30px;
 }
+
 
 .jumbotron{
   background-color: white;
   opacity: 0.5;
-  width: 50%;
+  width: 80%;
   float: none;
   margin: 0 auto;
 }
 
-h1{
-  text-align: center;
-  color: white;
-}
