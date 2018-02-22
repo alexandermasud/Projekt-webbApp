@@ -1,5 +1,17 @@
+.btn-primary{
+  float: none;
+}
+
+
 .container  {
-  background-color: purple;
+}
+
+.jumbotron{
+  background-color: white;
+  opacity: 0.5;
+  width: 50%;
+  float: none;
+  margin: 0 auto;
 }
 
 h1{
