@@ -10,6 +10,11 @@ export class QuizComponent implements OnInit {
 
 
   getData: string;
+
+  allQuestions: any[];
+  allAnswers: any[];
+
+  currentRound: number = 0;
   currentQuestion: string;
   currentAnswer: string;
   currentPlayerAnswer: string;
@@ -33,18 +38,21 @@ export class QuizComponent implements OnInit {
     let data = JSON.parse(this.getData);
     let questions:any[] = [];
     let answers:any[] = [];
-    console.log(data);
+    //console.log(data);
     for(let i = 0; i < data.results.length; i++){
 
       questions.push(data.results[i].question);
       answers.push(data.results[i].correct_answer);
     }
-    console.log("Fråga " + questions);
-    console.log("Svar " + answers);
-    this.currentQuestion = questions[0];
-    this.currentAnswer = answers[0];
+    //console.log("Fråga " + questions);
+    //console.log("Svar " + answers);
+    this.allQuestions = questions;
+    this.allAnswers = answers;
 
+    this.currentQuestion = this.allQuestions[0];
+    this.currentAnswer = this.allAnswers[0];
   }
+
     clickTrueFalse(buttonAnswer){
       this.currentPlayerAnswer = buttonAnswer
       if(this.currentPlayerAnswer == this.currentAnswer){
@@ -53,14 +61,22 @@ export class QuizComponent implements OnInit {
       else{
         alert("Du svarade fel...");
       }
+
+      this.currentRound++;
+      this.playGame();
     }
 
   playGame(){
+
+    let round: number = this.currentRound;
+    this.currentQuestion = this.allQuestions[round];
+    console.log(this.currentQuestion);
 
   }
 
   ngOnInit() {
     this.onGetQuiz();
+
   }
 
 }
