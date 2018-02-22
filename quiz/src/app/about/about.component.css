@@ -1,0 +1,15 @@
+.container  {
+}
+
+.jumbotron{
+  background-color: white;
+  opacity: 0.5;
+  width: 50%;
+  float: none;
+  margin: 0 auto;
+}
+
+h1{
+  text-align: center;
+  color: white;
+}
