@@ -33,13 +33,14 @@ export class QuizComponent implements OnInit {
   allAnswers: any[];
 
   currentRound: number = 0;
-  endAtRound: number = 4;
+  // ongetquiz för att ändra 2player
+  endAtRound: number = 5;
   currentQuestion: string;
   currentAnswer: string;
   currentPlayerAnswer: string;
 
   playerScore: number = 0;
-  playerName: string = 'Test';
+  playerName: string;
 
   showResult: boolean = false;
   showGame: boolean = true;
@@ -88,6 +89,7 @@ export class QuizComponent implements OnInit {
     }
 
     else if (this.choosenMode == 2){
+      this.endAtRound = 10;
       this.choosenAmountOfQuestions = 10;
       this.showP1P2 = true;
       this.currentPlayer = 'Player1'
@@ -177,7 +179,7 @@ export class QuizComponent implements OnInit {
   }
   onPostScoreboard(scoreBoardAnswer) {
     if (scoreBoardAnswer) {
-
+      this.playerName = prompt("Enter name my man/woman/nonbinary/owlkin/dragonkin: ");
       this.router.navigate(['scoreboard/' + this.playerScore + '/' + this.playerName + '']);
     } else {
       this.router.navigate(['intro']);
