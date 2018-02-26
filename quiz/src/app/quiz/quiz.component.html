@@ -1,7 +1,5 @@
-
-
-
-<div *ngIf="showGame">
+<!-- SKRIV FRÅGE-HTML HÄR -->
+<div *ngIf="showGame" class="jumbotron">
 
   <div *ngIf="showP1P2">
     {{ currentPlayer }}
@@ -10,12 +8,12 @@
 <h3>Question {{currentRound + 1}}</h3>
 <p [innerHTML]="currentQuestion"></p>
 
-<button (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)">True</button>
-<button (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)">False</button>
+<button (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)" class="raised btn-lg btn-primary">True</button>
+<button (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)" class="raised btn-lg btn-primary">False</button>
 
 </div>
 
-
+<!-- SKRIV RESULT HTML HÄR -->
 <div *ngIf="showResult">
   <h2>Du fick {{ playerScore }} poäng!</h2>
 
