@@ -19,6 +19,7 @@ import { AboutComponent } from './about/about.component';
 
 // Applikationens API service
 import { HttpService } from '../app/quiz/quiz.service';
+import { QuizTwoComponent } from './quiz-two/quiz-two.component';
 
 
 
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
     QuizComponent,
     ScoreBoardComponent,
     ResultComponent,
-    AboutComponent
+    AboutComponen,
+    QuizTwoComponentt
 
 
   ],
