@@ -3,10 +3,16 @@
   margin: 30px;
 }
 
-
 .jumbotron{
   background-color: rgba(255, 255, 255, 0.4);
   width: 80%;
   float: none;
+  margin-top: 100px;
   margin: 0 auto;
+}
+.avatar {
+    vertical-align: middle;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
 }
