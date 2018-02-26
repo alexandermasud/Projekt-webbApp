@@ -30,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'quizsetup/:playermode', component: QuizSetupComponent },
   { path: 'quiz/:category/:difficulty', component: QuizComponent },
   { path: 'scoreboard', component: ScoreBoardComponent},
+  { path: 'scoreboard/:playerscore', component: ScoreBoardComponent},
   { path: 'about', component: AboutComponent},
 ];
 

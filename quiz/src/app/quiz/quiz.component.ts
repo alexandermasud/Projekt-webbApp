@@ -103,7 +103,11 @@ export class QuizComponent implements OnInit {
   }
   onPostScoreboard(scoreBoardAnswer) {
     if (scoreBoardAnswer) {
-      this.router.navigate(['scoreboard']);
+
+
+
+
+      this.router.navigate(['scoreboard/' + this.playerScore + '']);
     } else {
       this.router.navigate(['intro']);
     }
