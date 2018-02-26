@@ -7,14 +7,13 @@ img{
   width: 25%;
   height: 25%;
 }
-
-
 .jumbotron{
-  background-color: white;
-  opacity: 0.4;
+  background-color: rgba(255, 255, 255, 0.4);
   width: 80%;
   float: none;
   margin: 0 auto;
 }
-
-
+.btn{
+  float: 0;
+  margin: 0 auto;
+}
