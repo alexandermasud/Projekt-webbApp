@@ -124,3 +124,7 @@ p{
     background: darkred;
     box-shadow: none;
 }
+
+button{
+    width:50%;
+}
