@@ -1,0 +1,37 @@
+h3{
+    color: white;
+    text-align: center
+}
+.btn{
+  display: block;
+  margin: 8%;
+  border-radius: 24px;
+}
+
+button {
+  width: 85%;
+}
+.btn-yellow {
+    background-color: yellow;
+}
+.btn-orange {
+    background-color: orange;
+}
+.btn-pink{
+    background-color: #e83e8c;
+}
+.btn-cyan{
+    background-color: #17a2b8;
+}
+.btn-white{
+    background-color: white;
+}
+
+.jumbotron{
+  background-color: black;
+  opacity: 0.7;
+  width: 80%;
+  float: none;
+  margin: 0 auto;
+}
+

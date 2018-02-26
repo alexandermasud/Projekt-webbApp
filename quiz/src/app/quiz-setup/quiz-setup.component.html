@@ -1,12 +1,20 @@
 
 
-<div *ngIf="showCategory">
+<div *ngIf="showCategory" class="jumbotron">
 
 <!-- SKRIV KATEGORI HTML HÄR -->
-<button (click)="category='9'; setCategory(category)">GENERAL</button>
-<button (click)="category='21'; setCategory(category)">SPORTS</button>
-<button (click)="category='23'; setCategory(category)">HISTORY</button>
+<h3>Välj Kategori: </h3>
+<button (click)="category='9'; setCategory(category)" class="btn btn-cyan btn-lg btn-block round">General</button>
+<button (click)="category='21'; setCategory(category)" class="btn btn-orange btn-lg btn-block round">Sports</button>
+<button (click)="category='23'; setCategory(category)" class="btn btn-white btn-lg btn-block round">Compuer-Science</button>
+<button (click)="category='23'; setCategory(category)" class="btn btn-success btn-lg btn-block round">Animals</button>
+<button (click)="category='23'; setCategory(category)" class="btn btn-yellow btn-lg btn-block round">History</button>
+<button (click)="category='23'; setCategory(category)" class="btn btn-pink btn-lg btn-block round">Cartoons</button>
+
 </div>
+
+
+
 
 
 <div *ngIf="showDifficulty">
