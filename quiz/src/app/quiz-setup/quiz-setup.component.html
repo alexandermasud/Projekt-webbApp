@@ -3,13 +3,13 @@
 <div *ngIf="showCategory" class="jumbotron">
 
 <!-- SKRIV KATEGORI HTML HÄR -->
-<h3>Välj Kategori: </h3>
+<h3>Välj kategori: </h3>
 <button (click)="category='9'; setCategory(category)" class="btn btn-cyan btn-lg btn-block round">General</button>
 <button (click)="category='21'; setCategory(category)" class="btn btn-orange btn-lg btn-block round">Sports</button>
-<button (click)="category='23'; setCategory(category)" class="btn btn-white btn-lg btn-block round">Compuer-Science</button>
-<button (click)="category='23'; setCategory(category)" class="btn btn-success btn-lg btn-block round">Animals</button>
 <button (click)="category='23'; setCategory(category)" class="btn btn-yellow btn-lg btn-block round">History</button>
-<button (click)="category='23'; setCategory(category)" class="btn btn-pink btn-lg btn-block round">Cartoons</button>
+<button (click)="category='27'; setCategory(category)" class="btn btn-success btn-lg btn-block round">Animals</button>
+<button (click)="category='18'; setCategory(category)" class="btn btn-white btn-lg btn-block round">Science-Computers</button>
+<button (click)="category='32'; setCategory(category)" class="btn btn-pink btn-lg btn-block round">Cartoon & Animations</button>
 
 </div>
 
@@ -17,10 +17,11 @@
 
 
 
-<div *ngIf="showDifficulty">
+<div *ngIf="showDifficulty" class="jumbotron">
 
 <!-- SKRIV SVÅRIGHETSGRAD HTML HÄR -->
-<button (click)="difficulty='hard'; setDifficulty(difficulty)">HARD</button>
-<button (click)="difficulty='medium'; setDifficulty(difficulty)">MEDIUM</button>
-<button (click)="difficulty='easy'; setDifficulty(difficulty)">EASY</button>
+<h3>Välj svårighetsgrad:</h3>
+<button (click)="difficulty='hard'; setDifficulty(difficulty)" class="btn btn-danger btn-lg btn-block round">HARD</button>
+<button (click)="difficulty='medium'; setDifficulty(difficulty)" class="btn btn-warning btn-lg btn-block round">MEDIUM</button>
+<button (click)="difficulty='easy'; setDifficulty(difficulty)" class="btn btn-success btn-lg btn-block round">EASY</button>
 </div>
