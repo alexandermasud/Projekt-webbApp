@@ -1,21 +1,30 @@
+
+
 <!-- SKRIV FRÅGE-HTML HÄR -->
 <div *ngIf="showGame" class="jumbotron">
-
+  <div class="container">
+    <div class="row">
   <div *ngIf="showP1P2">
     {{ currentPlayer }}
   </div>
-
-<h3>Question {{currentRound + 1}}</h3>
-<p [innerHTML]="currentQuestion"></p>
-
-<button (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)" class="raised btn-lg btn-success">True</button>
-<button (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)" class="raised btn-lg btn-danger">False</button>
-
+  </div>
+<div class="row">
+      <h3>Question {{currentRound + 1}}</h3>
+      <p [innerHTML]="currentQuestion"></p>
+      </div>
+  <div class="row">
+   
+ 
+      <button (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)" class="raised btn-lg btn-success col-xs-5 offset-xs1">True</button>
+      <button (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)" class="raised btn-lg btn-danger col-xs-5 offset-xs1">False</button>
+   
+  </div>
+  </div>
 </div>
 
 <!-- SKRIV RESULT HTML HÄR -->
-<div *ngIf="showResult">
-  <h2>Du fick {{ playerScore }} poäng!</h2>
+<div *ngIf="showResult" class="jumbotron">
+  <h2>You got {{ playerScore }} points!</h2>
 
   <h3>Post on scoreboard?</h3>
 

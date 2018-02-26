@@ -3,6 +3,7 @@
   width: 80%;
   float: none;
   margin: 0 auto;
+  margin-top: 70px;
 }
 h3 {
     color: white;
@@ -37,7 +38,6 @@ p{
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
->>>>>>> Stashed changes
   color: #fff;
   background-color: darkgreen;
   border-color: darkgreen;
@@ -64,6 +64,7 @@ p{
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
+    font-weight: bold;
 }
 .btn:focus, .btn:active:focus, .btn.active:focus {
     outline: 0 none;
@@ -122,4 +123,8 @@ p{
 .btn-danger:active, .btn-danger.active {
     background: darkred;
     box-shadow: none;
+}
+
+button{
+    width:50%;
 }

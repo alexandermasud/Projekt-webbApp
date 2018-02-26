@@ -71,8 +71,9 @@ export class QuizComponent implements OnInit {
       else{
         this.resultP1P2 = 'TIE!';
       }
-
+      this.showGame = false;
       this.showResult2Players = true;
+      
     }
     // Körs vid 1player
     else if (this.showP1P2 == false){
@@ -181,7 +182,7 @@ export class QuizComponent implements OnInit {
     if (scoreBoardAnswer) {
       this.playerName = prompt("Enter name my man/woman/nonbinary/owlkin/dragonkin: ");
       this.router.navigate(['scoreboard/' + this.playerScore + '/' + this.playerName + '']);
-      
+
 
 
       let oldItems = JSON.parse(localStorage.getItem('players')) || [];
