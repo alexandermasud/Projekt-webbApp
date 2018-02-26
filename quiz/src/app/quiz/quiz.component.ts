@@ -9,8 +9,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class QuizComponent implements OnInit {
 
+  choosenMode: number;
   choosenCategory: string;
   choosenDifficulty: string;
+  choosenAmountOfQuestions: number;
 
   playerMode: string;
 
@@ -33,7 +35,7 @@ export class QuizComponent implements OnInit {
 
 
 
-  constructor(private httpService: HttpService, public router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(public httpService: HttpService, public router: Router, private activatedRoute: ActivatedRoute) { }
 
 
   endGame() {
@@ -43,7 +45,20 @@ export class QuizComponent implements OnInit {
   }
 
   onGetQuiz() {
-    this.httpService.getQuestions(this.choosenCategory, this.choosenDifficulty)
+
+    if (this.choosenMode == 1){
+      this.choosenAmountOfQuestions = 5;
+    }
+
+    else if (this.choosenMode == 2){
+      this.choosenAmountOfQuestions = 10;
+    }
+
+    else{
+      alert('OGILTIGT!');
+    }
+
+    this.httpService.getQuestions(this.choosenAmountOfQuestions,this.choosenCategory, this.choosenDifficulty)
       .subscribe(
       data => this.getData = JSON.stringify(data),
       error => alert(error),
@@ -101,7 +116,7 @@ export class QuizComponent implements OnInit {
   }
   onPostScoreboard(scoreBoardAnswer) {
     if (scoreBoardAnswer) {
-      
+
       this.router.navigate(['scoreboard/' + this.playerScore + '/' + this.playerName + '']);
     } else {
       this.router.navigate(['intro']);
@@ -109,8 +124,11 @@ export class QuizComponent implements OnInit {
   }
   ngOnInit() {
     // Hämtar via URL ut vilken kategori och svårighetsgrad spelaren valde
+    this.choosenMode = this.activatedRoute.snapshot.params.mode;
     this.choosenCategory = this.activatedRoute.snapshot.params.category;
     this.choosenDifficulty = this.activatedRoute.snapshot.params.difficulty;
+
+    console.log('QUIZMODE: ' + this.choosenMode);
 
     this.onGetQuiz();
   }

@@ -33,15 +33,9 @@ export class QuizSetupComponent implements OnInit {
    console.log('CATEGORY: ' + this.choosenCategory);
    console.log('DIFFICULTY: ' + this.choosenDifficulty);
 
-   if (this.gameMode == 1){
-     this.router.navigate(['quiz/' + this.choosenCategory +'/'+ this.choosenDifficulty +'']);
-   }
-   else if(this.gameMode == 2){
-     alert('DU VALDE 2 PLAYER, DEN FUNKTIONEN KOMMER SNART!');
-   }
-   else{
-     alert('INTE GILTIGT VAL!');
-   }
+
+   this.router.navigate(['quiz/' +this.gameMode + '/' + this.choosenCategory +'/'+ this.choosenDifficulty +'']);
+
   }
 
   ngOnInit() {
