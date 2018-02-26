@@ -26,6 +26,7 @@ export class QuizComponent implements OnInit {
   currentPlayerAnswer: string;
 
   playerScore: number = 0;
+  playerName: string = 'Test';
 
   showResult: boolean = false;
   showGame: boolean = true;
@@ -39,9 +40,6 @@ export class QuizComponent implements OnInit {
 
     this.showGame = false;
     this.showResult = true;
-
-
-
   }
 
   onGetQuiz() {
@@ -103,11 +101,8 @@ export class QuizComponent implements OnInit {
   }
   onPostScoreboard(scoreBoardAnswer) {
     if (scoreBoardAnswer) {
-
-
-
-
-      this.router.navigate(['scoreboard/' + this.playerScore + '']);
+      
+      this.router.navigate(['scoreboard/' + this.playerScore + '/' + this.playerName + '']);
     } else {
       this.router.navigate(['intro']);
     }

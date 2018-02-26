@@ -11,15 +11,13 @@ export class ScoreBoardComponent implements OnInit {
   constructor(public router: Router, private activatedRoute: ActivatedRoute) { }
 
   userScore: number;
-  scores: any[0];
-
+  userName: string;
+  scores: any = [{name: 'Alexander', score: 5739},{name: 'Viktor', score: 2}];
 
 
   ngOnInit() {
     this.userScore = this.activatedRoute.snapshot.params.playerscore;
-    this.scores = [{name: 'Alexander', score: 5739},{name: 'Viktor', score: 2}, {name: 'TestPlayer', score: this.userScore}]
+    this.userName = this.activatedRoute.snapshot.params.playername;
+    this.scores.push({name:this.userName, score: this.userScore});
   }
-
-
-
 }
