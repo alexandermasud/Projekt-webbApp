@@ -44,8 +44,8 @@ const appRoutes: Routes = [
     QuizComponent,
     ScoreBoardComponent,
     ResultComponent,
-    AboutComponen,
-    QuizTwoComponentt
+    AboutComponent,
+    QuizTwoComponent
 
 
   ],
