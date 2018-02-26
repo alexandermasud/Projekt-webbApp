@@ -1,6 +1,10 @@
 .jumbotron{
+<<<<<<< Updated upstream
   background-color: black;
   opacity: 0.7;
+=======
+  background-color: rgba(0, 0, 0, 0.4);
+>>>>>>> Stashed changes
   width: 80%;
   float: none;
   margin: 0 auto;
@@ -18,6 +22,27 @@ p{
 .btn-success:active,
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
+  color: #fff;
+  background-color: darkgreen;
+  border-color: darkgreen;
+}
+/**************************
+  DEFAULT BOOTSTRAP STYLES
+**************************/
+
+
+.btn-primary {
+  color: #fff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+>>>>>>> Stashed changes
   color: #fff;
   background-color: darkgreen;
   border-color: darkgreen;
