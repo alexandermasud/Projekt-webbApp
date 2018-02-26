@@ -9,6 +9,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class QuizComponent implements OnInit {
 
+
+  showP1P2: boolean = false;
+  currentPlayer: string;
+  p1Score: number = 0;
+  p2Score: number = 0;
+  showResult2Players: boolean = false;
+  resultP1P2: string;
+  onlyOnWinner: boolean = false;
+
+  // -------------------------
+
   choosenMode: number;
   choosenCategory: string;
   choosenDifficulty: string;
@@ -22,7 +33,7 @@ export class QuizComponent implements OnInit {
   allAnswers: any[];
 
   currentRound: number = 0;
-  endAtRound: number = 5;
+  endAtRound: number = 4;
   currentQuestion: string;
   currentAnswer: string;
   currentPlayerAnswer: string;
@@ -39,9 +50,35 @@ export class QuizComponent implements OnInit {
 
 
   endGame() {
+    // Körs vi 2player
+    if (this.showP1P2 == true){
+      this.showP1P2 = false;
+      this.showResult2Players = true;
+      if (this.p1Score > this.p2Score){
 
-    this.showGame = false;
-    this.showResult = true;
+        this.playerScore = this.p1Score;
+        this.resultP1P2 = 'PLAYER 1 WON!';
+        this.onlyOnWinner = true;
+      }
+
+      else if(this.p1Score < this.p2Score){
+        this.playerScore = this.p2Score;
+        this.resultP1P2 = 'PLAYER 2 WON!';
+        this.onlyOnWinner = true;
+      }
+
+      else{
+        this.resultP1P2 = 'TIE!';
+      }
+
+      this.showResult2Players = true;
+    }
+    // Körs vid 1player
+    else if (this.showP1P2 == false){
+      this.showGame = false;
+      this.showResult = true;
+    }
+
   }
 
   onGetQuiz() {
@@ -52,6 +89,8 @@ export class QuizComponent implements OnInit {
 
     else if (this.choosenMode == 2){
       this.choosenAmountOfQuestions = 10;
+      this.showP1P2 = true;
+      this.currentPlayer = 'Player1'
     }
 
     else{
@@ -89,6 +128,15 @@ export class QuizComponent implements OnInit {
   clickTrueFalse(buttonAnswer) {
     this.currentPlayerAnswer = buttonAnswer
     if (this.currentPlayerAnswer == this.currentAnswer) {
+
+      // Ger p1 eller p2 poäng om rätt svar
+      if(this.currentPlayer == 'Player1'){
+        this.p1Score++;
+      }
+      else if (this.currentPlayer == 'Player2'){
+        this.p2Score++;
+      }
+
       this.playerScore++;
       console.log('Right!');
 
@@ -97,8 +145,21 @@ export class QuizComponent implements OnInit {
       console.log('WRONG!')
     }
 
-    console.log('SCORE: ' + this.playerScore);
+    // Togglar mellan player 1 och 2 om 2player
+    if(this.showP1P2){
 
+      if(this.currentPlayer == 'Player1'){
+         this.currentPlayer = 'Player2';
+      }
+      else if ( this.currentPlayer = 'Player2'){
+        this.currentPlayer = 'Player1'
+      }
+    }
+
+
+
+    console.log('SCORE: ' + this.playerScore);
+    // Avsultar spel om frågor är slut
     if (this.endAtRound - 1 == this.currentRound) {
       this.endGame();
     }

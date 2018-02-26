@@ -3,6 +3,10 @@
 
 <div *ngIf="showGame">
 
+  <div *ngIf="showP1P2">
+    {{ currentPlayer }}
+  </div>
+
 <h3>Question {{currentRound + 1}}</h3>
 <p [innerHTML]="currentQuestion"></p>
 
@@ -19,4 +23,21 @@
 
   <button (click)="scoreBoardAnswer = true; onPostScoreboard(scoreBoardAnswer)">Yes</button>
   <button (click)="scoreBoardAnswer = false; onPostScoreboard(scoreBoardAnswer)">No</button>
+</div>
+
+<div *ngIf="showResult2Players">
+
+  <h2>{{ resultP1P2 }}</h2>
+
+
+
+  <div *ngIf="onlyOnWinner">
+
+    <h3>Post on scoreboard?</h3>
+    <button (click)="scoreBoardAnswer = true; onPostScoreboard(scoreBoardAnswer)">Yes</button>
+    <button (click)="scoreBoardAnswer = false; onPostScoreboard(scoreBoardAnswer)">No</button>
+
+  </div>
+
+
 </div>
