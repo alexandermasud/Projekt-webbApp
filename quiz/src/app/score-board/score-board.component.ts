@@ -18,6 +18,9 @@ export class ScoreBoardComponent implements OnInit {
   ngOnInit() {
     this.userScore = this.activatedRoute.snapshot.params.playerscore;
     this.userName = this.activatedRoute.snapshot.params.playername;
-    this.scores.push({name:this.userName, score: this.userScore});
+    let a = localStorage.getItem('players');
+    this.scores = JSON.parse(a);
+    console.log(this.scores);
+
   }
 }

@@ -21,8 +21,6 @@ import { AboutComponent } from './about/about.component';
 import { HttpService } from '../app/quiz/quiz.service';
 
 
-
-
 // Routes för applikationen
 const appRoutes: Routes = [
   { path: '', component: LandingComponent },
@@ -46,7 +44,6 @@ const appRoutes: Routes = [
     ScoreBoardComponent,
     ResultComponent,
     AboutComponent
-
 
   ],
   imports: [

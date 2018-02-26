@@ -181,10 +181,32 @@ export class QuizComponent implements OnInit {
     if (scoreBoardAnswer) {
       this.playerName = prompt("Enter name my man/woman/nonbinary/owlkin/dragonkin: ");
       this.router.navigate(['scoreboard/' + this.playerScore + '/' + this.playerName + '']);
+      
+
+
+      let oldItems = JSON.parse(localStorage.getItem('players')) || [];
+
+      let newItem =
+      {
+        'playerName': this.playerName , 'playerScore': this.playerScore
+      };
+
+      oldItems.push(newItem);
+
+      localStorage.setItem('players', JSON.stringify(oldItems));
+        //localStorage.setItem('result', '');
+      //localStorage.setItem('result', JSON.stringify(sendToLocal));
+
+
+
+
+
     } else {
       this.router.navigate(['intro']);
     }
   }
+
+
   ngOnInit() {
     // Hämtar via URL ut vilken kategori och svårighetsgrad spelaren valde
     this.choosenMode = this.activatedRoute.snapshot.params.mode;
