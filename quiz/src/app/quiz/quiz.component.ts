@@ -193,7 +193,9 @@ export class QuizComponent implements OnInit {
       };
 
       oldItems.push(newItem);
-
+      oldItems.sort(function(obj1, obj2){
+        return obj2.playerScore - obj1.playerScore;
+      });
       localStorage.setItem('players', JSON.stringify(oldItems));
         //localStorage.setItem('result', '');
       //localStorage.setItem('result', JSON.stringify(sendToLocal));
