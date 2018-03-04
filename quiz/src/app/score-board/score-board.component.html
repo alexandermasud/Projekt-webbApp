@@ -9,12 +9,15 @@
         <th scope="col">Score</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="displayPlayers">
       <tr *ngFor="let s of scores">
         <td>{{s.playerName}}</td>
         <td>{{s.playerScore}}</td>
       </tr>
     </tbody>
   </table>
+  <div>
+    <button (click)="deleteScore = true; clearScoreboard(deleteScore)">Delete Results</button>
+  </div>
   </div>
 </div>

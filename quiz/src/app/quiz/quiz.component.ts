@@ -197,6 +197,8 @@ export class QuizComponent implements OnInit {
         return obj2.playerScore - obj1.playerScore;
       });
       localStorage.setItem('players', JSON.stringify(oldItems));
+
+      
         //localStorage.setItem('result', '');
       //localStorage.setItem('result', JSON.stringify(sendToLocal));
 
@@ -208,6 +210,8 @@ export class QuizComponent implements OnInit {
       this.router.navigate(['intro']);
     }
   }
+
+ 
 
 
   ngOnInit() {

@@ -15,6 +15,21 @@ export class ScoreBoardComponent implements OnInit {
   scores: any = [{name: 'Alexander', score: 5739},{name: 'Viktor', score: 2}];
 
 
+  clearScoreboard(deleteScore) {
+    if(deleteScore){
+      localStorage.removeItem('players');
+      let tableBody = document.getElementById("displayPlayers");
+      while(tableBody.firstChild) {
+        tableBody.removeChild(tableBody.firstChild);
+      }
+      
+      
+    }
+    else{
+      console.log("Players were not removed.");
+    }
+  }
+
   ngOnInit() {
     this.userScore = this.activatedRoute.snapshot.params.playerscore;
     this.userName = this.activatedRoute.snapshot.params.playername;
