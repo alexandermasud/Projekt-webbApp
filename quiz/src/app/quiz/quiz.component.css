@@ -131,3 +131,11 @@ p{
 button{
     width:50%;
 }
+
+.rightAnswer{
+  background-color: rgb(96, 172, 90);
+}
+
+.wrongAnswer{
+  background-color: rgb(219, 69, 83);
+}

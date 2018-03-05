@@ -45,6 +45,7 @@ export class QuizComponent implements OnInit {
 
   showResult: boolean = false;
   showGame: boolean = true;
+  showGameClass: string = 'jumbotron col-lg-6 animated fadeInLeft';
 
 
 
@@ -132,7 +133,7 @@ export class QuizComponent implements OnInit {
   clickTrueFalse(buttonAnswer) {
     this.currentPlayerAnswer = buttonAnswer
     if (this.currentPlayerAnswer == this.currentAnswer) {
-
+      this.showGameClass = 'jumbotron col-lg-6 animated rightAnswer'
       // Ger p1 eller p2 poäng om rätt svar
       if(this.currentPlayer == 'Player1'){
         this.p1Score++;
@@ -146,6 +147,7 @@ export class QuizComponent implements OnInit {
 
     }
     else {
+      this.showGameClass = 'jumbotron col-lg-6 animated wrongAnswer'
       console.log('WRONG!')
     }
 
