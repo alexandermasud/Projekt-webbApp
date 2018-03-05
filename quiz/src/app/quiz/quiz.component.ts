@@ -73,7 +73,7 @@ export class QuizComponent implements OnInit {
       }
       this.showGame = false;
       this.showResult2Players = true;
-      
+
     }
     // Körs vid 1player
     else if (this.showP1P2 == false){
@@ -178,19 +178,12 @@ export class QuizComponent implements OnInit {
     this.currentAnswer = this.allAnswers[i];
 
   }
-  onPostScoreboard(scoreBoardAnswer) {
-    if (scoreBoardAnswer) {
-      this.playerName = prompt("Enter name my man/woman/nonbinary/owlkin/dragonkin: ");
+  onPostScoreboard() {
+
       this.router.navigate(['scoreboard/' + this.playerScore + '/' + this.playerName + '']);
 
-
-
       let oldItems = JSON.parse(localStorage.getItem('players')) || [];
-
-      let newItem =
-      {
-        'playerName': this.playerName , 'playerScore': this.playerScore
-      };
+      let newItem = { 'playerName': this.playerName , 'playerScore': this.playerScore};
 
       oldItems.push(newItem);
       oldItems.sort(function(obj1, obj2){
@@ -198,20 +191,9 @@ export class QuizComponent implements OnInit {
       });
       localStorage.setItem('players', JSON.stringify(oldItems));
 
-      
-        //localStorage.setItem('result', '');
-      //localStorage.setItem('result', JSON.stringify(sendToLocal));
-
-
-
-
-
-    } else {
-      this.router.navigate(['intro']);
-    }
   }
 
- 
+
 
 
   ngOnInit() {

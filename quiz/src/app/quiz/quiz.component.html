@@ -11,13 +11,12 @@
 <div class="row">
       <h3>Question {{currentRound + 1}}</h3>
       <p [innerHTML]="currentQuestion"></p>
-      </div>
-  <div class="row">
-   
- 
+</div>
+<div class="row">
+
       <button (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)" class="raised btn-lg btn-success col-xs-5 offset-xs1">True</button>
       <button (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)" class="raised btn-lg btn-danger col-xs-5 offset-xs1">False</button>
-   
+
   </div>
   </div>
 </div>
@@ -27,24 +26,37 @@
   <h2>You got {{ playerScore }} points!</h2>
 
   <h3>Post on scoreboard?</h3>
+  <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Yes</button>
+  <button class="btn btn-danger" routerLink="/">No</button>
 
-  <button (click)="scoreBoardAnswer = true; onPostScoreboard(scoreBoardAnswer)">Yes</button>
-  <button (click)="scoreBoardAnswer = false; onPostScoreboard(scoreBoardAnswer)">No</button>
+<div class="collapse" id="collapseExample">
+  <form>
+    <div class="form-group">
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
-
+</div>
 <div *ngIf="showResult2Players">
 
   <h2>{{ resultP1P2 }}</h2>
 
+<div *ngIf="onlyOnWinner">
+  <h3>Post on scoreboard?</h3>
+  <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Yes</button>
+  <button class="btn btn-danger" routerLink="/">No</button>
 
+<div class="collapse" id="collapseExample">
+  <form>
+    <div class="form-group">
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
 
-  <div *ngIf="onlyOnWinner">
-
-    <h3>Post on scoreboard?</h3>
-    <button (click)="scoreBoardAnswer = true; onPostScoreboard(scoreBoardAnswer)">Yes</button>
-    <button (click)="scoreBoardAnswer = false; onPostScoreboard(scoreBoardAnswer)">No</button>
-
-  </div>
+</div>
 
 
 </div>
