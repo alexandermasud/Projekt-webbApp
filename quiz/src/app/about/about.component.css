@@ -3,15 +3,24 @@
   margin: 30px;
 }
 .jumbotron{
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   width: 80%;
   float: none;
-  margin-top: 100px;
   margin: 0 auto;
+}
+.jumbotron-fluid{
+  margin-top: 90px;
 }
 .avatar {
     vertical-align: middle;
     width: 20%;
     height: 20%;
     border-radius: 50%;
+}
+.avatar[_ngcontent-c3]{
+  width: 150px;
+  height: 150px;
+}
+p{
+  color: #fff;
 }
