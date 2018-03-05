@@ -24,6 +24,11 @@
 .modal-footer{
   border: 0px;
 }
+
 table{
   color: white;
+}
+th {
+  color: black;
+  font-weight: bold;
 }
