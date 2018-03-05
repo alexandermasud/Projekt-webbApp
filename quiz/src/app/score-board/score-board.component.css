@@ -10,3 +10,16 @@
   margin: 0 auto;
   margin-top: 70px;
 }
+
+.modal{
+  color: white;
+}
+.modal-content{
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-header{
+  border: 0px;
+}
+.modal-footer{
+  border: 0px;
+}

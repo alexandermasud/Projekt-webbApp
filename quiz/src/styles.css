@@ -10,3 +10,48 @@ body{
   background-repeat: no-repeat;
   font-family: 'Oxygen', sans-serif;
 }
+
+.btn-orange {
+    background-color: #F47219;
+    color: white;
+    display: block;
+}
+.btn-orange:hover{
+  background-color:#FF9248;
+}
+
+.btn-green{
+    background-color: #12AC59;
+    color: white;
+    display: block;
+}
+.btn-green:hover{
+  background-color: #33B46F;
+}
+
+.btn-blue{
+    background-color: #176D9B;
+    color: white;
+    display: block;
+}
+.btn-blue:hover{
+  background-color:#347CA2;
+}
+
+.btn-purple{
+    background-color: #5E1DA5;
+    color: white;
+    display: block;
+}
+.btn-purple:hover{
+  background-color:#713BAC;
+}
+
+.btn-red{
+    background-color: #DA1752;
+    color: white;
+    display: block;
+}
+.btn-red:hover{
+  background-color:#E44172;
+}

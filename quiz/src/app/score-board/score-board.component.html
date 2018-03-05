@@ -16,8 +16,31 @@
       </tr>
     </tbody>
   </table>
-  <div>
-    <button (click)="deleteScore = true; clearScoreboard(deleteScore)">Delete Results</button>
+  <div class="row">
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-purple" data-toggle="modal" data-target="#exampleModal">
+  Clear Scoreboard
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sure you want to clear the scoreboard?</h5>
+
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-blue" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-red" (click)="deleteScore = true; clearScoreboard(deleteScore)" data-dismiss="modal">Clear</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   </div>
   </div>
 </div>
