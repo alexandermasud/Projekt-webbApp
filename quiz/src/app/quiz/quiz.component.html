@@ -44,19 +44,18 @@
 
 <div *ngIf="onlyOnWinner">
   <h3>Post on scoreboard?</h3>
-  <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Yes</button>
-  <button class="btn btn-danger" routerLink="/">No</button>
-
-<div class="collapse" id="collapseExample">
-  <form>
-    <div class="form-group">
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+  <button class="btn btn-green btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Yes</button>
+  <div class="collapse" id="collapseExample">
+    <div class="card">
+      <form ngNativeValidate #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+        <div class="form-group">
+          <input type="text" class="form-control" name="username" minlength="2" placeholder="Username" ngModel required>
+        </div>
+      <button type="submit" class="btn btn-blue btn-lg">Post score</button>
+      </form>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
-
-</div>
+  </div>
+  <button class="btn btn-red btn-lg btn-lg" routerLink="/">No</button>
 
 
 </div>
