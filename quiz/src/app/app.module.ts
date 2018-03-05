@@ -4,16 +4,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
 // Applikationens komponenter
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
 import { IntroComponent } from './intro/intro.component';
 import { QuizSetupComponent } from './quiz-setup/quiz-setup.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { ScoreBoardComponent } from './score-board/score-board.component';
-import { ResultComponent } from './result/result.component';
 import { AboutComponent } from './about/about.component';
 
 
@@ -36,13 +35,11 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     LandingComponent,
     IntroComponent,
     QuizSetupComponent,
     QuizComponent,
     ScoreBoardComponent,
-    ResultComponent,
     AboutComponent
 
   ],
