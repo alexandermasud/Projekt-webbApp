@@ -150,12 +150,20 @@ export class QuizComponent implements OnInit {
 
       this.playerScore++;
       this.showGameClass = 'jumbotron col-lg-6 animated pulse rightAnswer';
+      let audio = new Audio();
+      audio.src = "../../assets/right.wav";
+      audio.load();
+      audio.play();
       setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight rightAnswer'}, 500);
       console.log('Right!');
 
     }
     else {
       this.showGameClass = 'jumbotron col-lg-6 animated pulse wrongAnswer'
+      let audio = new Audio();
+      audio.src = "../../assets/wrong.wav";
+      audio.load();
+      audio.play();
       setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight wrongAnswer'}, 500);
       console.log('WRONG!')
     }
