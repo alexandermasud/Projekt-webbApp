@@ -12,10 +12,17 @@
   background-color: #DE652E;
   color: white;
 }
+.btn-orange:hover{
+  background-color: #DE792E;
+}
 .btn-purple{
   background-color: #8A1D95;
   color: white;
 }
+.btn-purple:hover{
+  background-color: #A803C5;
+}
+
 .qBtn{
   margin: 5px auto 5px auto;
 }
