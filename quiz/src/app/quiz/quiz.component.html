@@ -28,9 +28,10 @@
 
 
   <h3>Post on scoreboard?</h3>
-  <button class="btn btn-green btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+  <button class="btn btn-green btn-lg center-btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
     aria-controls="collapseExample">Yes</button>
-  <div class="collapse" id="collapseExample">
+  <button class="btn btn-red btn-lg btn-lg center-btn" routerLink="/">No</button>
+    <div class="collapse" id="collapseExample">
     <div class="card">
       <form ngNativeValidate #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
         <div class="form-group">
@@ -40,7 +41,6 @@
       </form>
     </div>
   </div>
-  <button class="btn btn-red btn-lg btn-lg" routerLink="/">No</button>
 
 
 
