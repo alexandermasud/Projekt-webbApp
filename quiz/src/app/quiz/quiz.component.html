@@ -1,23 +1,21 @@
-
-
 <!-- SKRIV FRÅGE-HTML HÄR -->
 <div *ngIf="showGame" [ngClass]="showGameClass">
   <div class="container">
     <div class="row">
-  <div *ngIf="showP1P2">
-    {{ currentPlayer }}
-  </div>
-  </div>
-<div class="row">
+      <div *ngIf="showP1P2">
+        {{ currentPlayer }}
+      </div>
+    </div>
+    <div class="row">
       <h3>Question {{currentRound + 1}}</h3>
+    </div>
+    <div class="row">
       <p [innerHTML]="currentQuestion"></p>
-</div>
-<div class="row">
-
+    </div>
+    <div class="row">
       <button (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)" class="raised btn-lg btn-success col-xs-5 offset-xs1">True</button>
       <button (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)" class="raised btn-lg btn-danger col-xs-5 offset-xs1">False</button>
-
-  </div>
+    </div>
   </div>
 </div>
 
@@ -28,14 +26,15 @@
 
 
   <h3>Post on scoreboard?</h3>
-  <button class="btn btn-green btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Yes</button>
+  <button class="btn btn-green btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+    aria-controls="collapseExample">Yes</button>
   <div class="collapse" id="collapseExample">
     <div class="card">
       <form ngNativeValidate #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
         <div class="form-group">
           <input type="text" class="form-control" name="username" minlength="2" placeholder="Username" ngModel required>
         </div>
-      <button type="submit" class="btn btn-blue btn-lg">Post score</button>
+        <button type="submit" class="btn btn-blue btn-lg">Post score</button>
       </form>
     </div>
   </div>
@@ -48,20 +47,21 @@
 
   <h2>{{ resultP1P2 }}</h2>
 
-<div *ngIf="onlyOnWinner">
-  <h3>Post on scoreboard?</h3>
-  <button class="btn btn-green btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Yes</button>
-  <div class="collapse" id="collapseExample">
-    <div class="card">
-      <form ngNativeValidate #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
-        <div class="form-group">
-          <input type="text" class="form-control" name="username" minlength="2" placeholder="Username" ngModel required>
-        </div>
-      <button type="submit" class="btn btn-blue btn-lg">Post score</button>
-      </form>
+  <div *ngIf="onlyOnWinner">
+    <h3>Post on scoreboard?</h3>
+    <button class="btn btn-green btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+      aria-controls="collapseExample">Yes</button>
+    <div class="collapse" id="collapseExample">
+      <div class="card">
+        <form ngNativeValidate #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+          <div class="form-group">
+            <input type="text" class="form-control" name="username" minlength="2" placeholder="Username" ngModel required>
+          </div>
+          <button type="submit" class="btn btn-blue btn-lg">Post score</button>
+        </form>
+      </div>
     </div>
+    <button class="btn btn-red btn-lg btn-lg" routerLink="/">No</button>
+
+
   </div>
-  <button class="btn btn-red btn-lg btn-lg" routerLink="/">No</button>
-
-
-</div>
