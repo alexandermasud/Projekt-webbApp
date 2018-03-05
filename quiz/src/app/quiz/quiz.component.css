@@ -77,6 +77,8 @@ p{
 
 .btn-success {
     background: #30CB00;
+    margin-right: 10px;
+    width: 30%;
     color: #ffffff;
 }
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success {
@@ -119,6 +121,8 @@ p{
 }
 
 .btn-danger {
+    margin-right: 10px;
+    width: 30%;
     background: red;
     color: #ffffff;
 }
