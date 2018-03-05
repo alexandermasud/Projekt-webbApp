@@ -19,11 +19,16 @@ export class QuizSetupComponent implements OnInit {
   choosenCategory: string;
   choosenDifficulty: string;
 
+  showHardButton: boolean = true;
+
   // Tar bort kategorierna och lägger till svårighetsgraderna på html
   setCategory(category){
     this.choosenCategory = category;
     this.showCategory = false;
     this.showDifficulty = true;
+    if(category == '21' || category == '27' || category == '18' || category == '32'){
+      this.showHardButton = false;  
+    }
   }
 
   setDifficulty(difficulty){
