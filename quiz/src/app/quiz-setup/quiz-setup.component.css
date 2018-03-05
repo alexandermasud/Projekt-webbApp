@@ -4,21 +4,6 @@ h3{
 }
 .btn{
   display: block;
-  margin: 20px;
-  margin-left: 7%;
+  margin-bottom: 20px;
   font-weight: bold;
-}
-
-
-button {
-  width: 85%;
-}
-
-.jumbotron{
-  background-color: rgba(0, 0, 0, 0.4);
-  width: 80%;
-  float: none;
-  margin: 0 auto;
-  margin-top: 70px;
-  padding: 40px !important;
 }

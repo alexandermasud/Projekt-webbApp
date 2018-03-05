@@ -9,12 +9,12 @@
     <div class="row">
       <h3>Question {{currentRound + 1}}</h3>
     </div>
-    <div class="row">
+    <div class="row questions">
       <p [innerHTML]="currentQuestion"></p>
     </div>
     <div class="row">
-      <button (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)" class="raised btn-lg btn-success col-xs-5 offset-xs1">True</button>
-      <button (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)" class="raised btn-lg btn-danger col-xs-5 offset-xs1">False</button>
+      <button (click)="buttonAnswer = 'True'; clickTrueFalse(buttonAnswer)" class="btn btn-green btn-lg col-sm-12 col-md-4 offset-md-1">True</button>
+      <button (click)="buttonAnswer = 'False'; clickTrueFalse(buttonAnswer)" class="btn btn-red btn-lg col-sm-12 col-md-4 offset-md-2">False</button>
       <audio id="correctSound" src="./assets/right.wav"></audio>
       <audio id="wrongSound" src="./assets/wrong.wav"></audio>
     </div>
@@ -22,40 +22,47 @@
 </div>
 
 <!-- SKRIV RESULT HTML HÄR -->
-<div *ngIf="showResult" class="jumbotron">
+<div *ngIf="showResult" class="jumbotron col-lg-6 animated fadeInLeft">
   <h2>You got {{ playerScore }} points!</h2>
 
   <h3>Post on scoreboard?</h3>
-  <button class="btn btn-green btn-lg center-btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+  <button class="btn btn-green btn-lg col-lg-12 postYesButton" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
     aria-controls="collapseExample">Yes</button>
-  <button class="btn btn-red btn-lg btn-lg center-btn" routerLink="/">No</button>
-  <div class="collapse" id="collapseExample">
-    <div class="card">
+
+  <div class="collapse col-lg-12" id="collapseExample">
+
       <form ngNativeValidate #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
         <div class="form-group">
           <input type="text" class="form-control" name="username" minlength="2" placeholder="Username" ngModel required>
         </div>
-        <button type="submit" class="btn btn-blue btn-lg">Post score</button>
+        <button type="submit col-lg-12" class="btn btn-blue btn-lg postScoreButton">Post score</button>
       </form>
-    </div>
+
   </div>
+    <button class="btn btn-red btn-lg btn-lg col-lg-12" routerLink="/">No</button>
 </div>
 
-<div *ngIf="showResult2Players">
+<div *ngIf="showResult2Players" class="jumbotron col-lg-6 animated fadeInLeft">
   <h2>{{ resultP1P2 }}</h2>
+  <div *ngIf="onlyOnTie">
+  <button class="btn btn-lg btn-blue" routerLink="/">Home</button>
+  </div>
   <div *ngIf="onlyOnWinner">
     <h3>Post on scoreboard?</h3>
-    <button class="btn btn-green btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+    <button class="btn btn-green btn-lg col-lg-12 postYesButton" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
       aria-controls="collapseExample">Yes</button>
-    <div class="collapse" id="collapseExample">
-      <div class="card">
+
+    <div class="collapse col-lg-12" id="collapseExample">
+
         <form ngNativeValidate #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
           <div class="form-group">
             <input type="text" class="form-control" name="username" minlength="2" placeholder="Username" ngModel required>
           </div>
-          <button type="submit" class="btn btn-blue btn-lg">Post score</button>
+          <button type="submit col-lg-12" class="btn btn-blue btn-lg postScoreButton">Post score</button>
         </form>
-      </div>
+
     </div>
-    <button class="btn btn-red btn-lg btn-lg" routerLink="/">No</button>
+      <button class="btn btn-red btn-lg btn-lg col-lg-12" routerLink="/">No</button>
   </div>
+
+</div>

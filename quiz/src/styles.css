@@ -8,7 +8,27 @@ body{
   -moz-background-size: cover;  /* Firefox 3.6 */
   background-position: center;  /* Internet Explorer 7/8 */
   background-repeat: no-repeat;
-  font-family: 'Oxygen', sans-serif;
+}
+
+.jumbotron{
+
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 80%;
+  float: none;
+  margin: 0 auto;
+  color: white;
+  margin-top: 40px;
+
+}
+
+.btn-pink{
+  background-color:#C74A8C;
+  color: white;
+  display:block;
+}
+.btn-pink:hover{
+  color: white;
+  background-color:#DA70A8;
 }
 
 .btn-orange {
@@ -17,6 +37,7 @@ body{
     display: block;
 }
 .btn-orange:hover{
+  color: white;
   background-color:#FF9248;
 }
 
@@ -26,6 +47,7 @@ body{
     display: block;
 }
 .btn-green:hover{
+  color: white;
   background-color: #33B46F;
 }
 
@@ -35,6 +57,7 @@ body{
     display: block;
 }
 .btn-blue:hover{
+  color: white;
   background-color:#347CA2;
 }
 
@@ -44,6 +67,7 @@ body{
     display: block;
 }
 .btn-purple:hover{
+  color: white;
   background-color:#713BAC;
 }
 
@@ -53,5 +77,6 @@ body{
     display: block;
 }
 .btn-red:hover{
+  color: white;
   background-color:#E44172;
 }

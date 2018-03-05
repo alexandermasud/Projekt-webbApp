@@ -13,7 +13,7 @@
 <div *ngIf="showDifficulty" class="jumbotron col-lg-6 animated fadeIn">
     <!-- SKRIV SVÅRIGHETSGRAD HTML HÄR -->
     <h3>Choose difficulty:</h3>
-    <button *ngIf="showHardButton" (click)="difficulty='hard'; setDifficulty(difficulty)" class="btn btn-danger btn-lg btn-block">Difficult</button>
-    <button (click)="difficulty='medium'; setDifficulty(difficulty)" class="btn btn-warning btn-lg btn-block round">Medium</button>
-    <button (click)="difficulty='easy'; setDifficulty(difficulty)" class="btn btn-success btn-lg btn-block round">Easy</button>
+    <button *ngIf="showHardButton" (click)="difficulty='hard'; setDifficulty(difficulty)" class="btn btn-red btn-lg btn-block">Hard</button>
+    <button (click)="difficulty='medium'; setDifficulty(difficulty)" class="btn btn-orange btn-lg btn-block round">Medium</button>
+    <button (click)="difficulty='easy'; setDifficulty(difficulty)" class="btn btn-green btn-lg btn-block round">Easy</button>
 </div>

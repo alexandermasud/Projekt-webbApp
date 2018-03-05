@@ -18,6 +18,7 @@ export class QuizComponent implements OnInit {
   showResult2Players: boolean = false;
   resultP1P2: string;
   onlyOnWinner: boolean = false;
+  onlyOnTie: boolean = false;
 
   // -------------------------
 
@@ -53,10 +54,13 @@ export class QuizComponent implements OnInit {
 
 
   endGame() {
-    // Körs vi 2player
+
+
+    // Körs vid 2player
     if (this.showP1P2 == true){
-      this.showP1P2 = false;
+
       this.showResult2Players = true;
+
       if (this.p1Score > this.p2Score){
 
         this.playerScore = this.p1Score;
@@ -72,6 +76,7 @@ export class QuizComponent implements OnInit {
 
       else{
         this.resultP1P2 = 'TIE!';
+        this.onlyOnTie = true;
       }
       this.showGame = false;
       this.showResult2Players = true;
@@ -95,7 +100,7 @@ export class QuizComponent implements OnInit {
       this.endAtRound = 10;
       this.choosenAmountOfQuestions = 10;
       this.showP1P2 = true;
-      this.currentPlayer = 'Player1'
+      this.currentPlayer = 'Player 1'
     }
 
     else{
@@ -136,33 +141,35 @@ export class QuizComponent implements OnInit {
 
 
       // Ger p1 eller p2 poäng om rätt svar
-      if(this.currentPlayer == 'Player1'){
+      if(this.currentPlayer == 'Player 1'){
         this.p1Score++;
       }
-      else if (this.currentPlayer == 'Player2'){
+      else if (this.currentPlayer == 'Player 2'){
         this.p2Score++;
       }
 
       this.playerScore++;
-      this.showGameClass = 'jumbotron col-lg-6 rightAnswer';
-      setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight rightAnswer'}, 1000);
+      this.showGameClass = 'jumbotron col-lg-6 animated pulse rightAnswer';
+      setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight rightAnswer'}, 500);
       console.log('Right!');
 
     }
     else {
-      this.showGameClass = 'jumbotron col-lg-6 wrongAnswer'
-      setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight wrongAnswer'}, 1000);
+      this.showGameClass = 'jumbotron col-lg-6 animated pulse wrongAnswer'
+      setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight wrongAnswer'}, 500);
       console.log('WRONG!')
     }
 
     // Togglar mellan player 1 och 2 om 2player
     if(this.showP1P2){
 
-      if(this.currentPlayer == 'Player1'){
-         this.currentPlayer = 'Player2';
+      if(this.currentPlayer == 'Player 1'){
+
+        setTimeout( () => {this.currentPlayer = 'Player 2'}, 1000);
+
       }
-      else if ( this.currentPlayer = 'Player2'){
-        this.currentPlayer = 'Player1'
+      else if ( this.currentPlayer = 'Player 2'){
+        setTimeout( () => {this.currentPlayer = 'Player 1'}, 1000);
       }
     }
 
@@ -171,12 +178,12 @@ export class QuizComponent implements OnInit {
     console.log('SCORE: ' + this.playerScore);
     // Avsultar spel om frågor är slut
     if (this.endAtRound - 1 == this.currentRound) {
-      this.endGame();
+      setTimeout( () => {this.endGame()}, 1000);
     }
     else {
-      setTimeout( () => {this.currentRound++}, 2000);
-      setTimeout( () => {this.playGame()}, 2000);
-      setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeInLeft'}, 2000);
+      setTimeout( () => {this.currentRound++}, 1000);
+      setTimeout( () => {this.playGame()}, 1000);
+      setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeInLeft'}, 1000);
     }
   }
 

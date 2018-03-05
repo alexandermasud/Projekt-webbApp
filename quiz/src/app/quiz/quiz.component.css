@@ -1,10 +1,38 @@
-.jumbotron{
-  background-color: rgba(0, 0, 0, 0.4);
-  width: 80%;
-  float: none;
-  margin: 0 auto;
-  margin-top: 70px;
+
+.pulse {
+  -webkit-animation: pulse 0.3s; /* Safari 4+ */
+  -moz-animation:    pulse 0.3s; /* Fx 5+ */
+  -o-animation:      pulse 0.3s; /* Opera 12+ */
+  animation:         pulse 0.3s; /* IE 10+, Fx 29+ */
 }
+
+.fadeInLeft {
+  -webkit-animation: fadeInLeft 0.5s; /* Safari 4+ */
+  -moz-animation:    fadeInLeft 0.5s; /* Fx 5+ */
+  -o-animation:      fadeInLeft 0.5s; /* Opera 12+ */
+  animation:         fadeInLeft 0.5s; /* IE 10+, Fx 29+ */
+}
+
+.fadeOutRight {
+  -webkit-animation: fadeOutRight 0.5s; /* Safari 4+ */
+  -moz-animation:    fadeOutRight 0.5s; /* Fx 5+ */
+  -o-animation:      fadeOutRight 0.5s; /* Opera 12+ */
+  animation:         fadeOutRight 0.5s; /* IE 10+, Fx 29+ */
+}
+
+.questions{
+  height: 170px;
+}
+
+.questions p{
+  font-size: 20px;
+}
+
+button{
+  width:100%; 
+}
+
+
 h3 {
     color: white;
     text-align: center;
@@ -17,7 +45,23 @@ p{
   color: white;
 }
 
-/* GRÖN KNAPP */
+#collapseExample{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.postScoreButton{
+  width: 100%;
+}
+.postYesButton{
+  margin-bottom: 20px;
+}
+
+
+/*
+
+
+/* GRÖN KNAPP
 .btn-success:hover,
 .btn-success:focus,
 .btn-success:active,
@@ -27,9 +71,9 @@ p{
   background-color: darkgreen;
   border-color: darkgreen;
 }
-/**************************
+**************************
   DEFAULT BOOTSTRAP STYLES
-**************************/
+**************************
 
 
 .btn-primary {
@@ -47,9 +91,9 @@ p{
   background-color: darkgreen;
   border-color: darkgreen;
 }
-/***********************
+***********************
   RAISED BUTTONS
-************************/
+************************
 .btn-success.raised {
     box-shadow: 0 8px 0 0 darkgreen;
 }
@@ -60,9 +104,9 @@ p{
     margin-top: 3px;
 }
 
-/***********************
+***********************
   CUSTON BTN VALUES
-************************/
+************************
 .btn {
     padding: 14px 24px;
     border: 0 none;
@@ -89,7 +133,7 @@ p{
     box-shadow: none;
 }
 
-/*RÖD KNAPP*/
+RÖD KNAPP
 .btn-danger:hover,
 .btn-danger:focus,
 .btn-danger:active,
@@ -100,9 +144,9 @@ p{
   border-color: darkred;
 }
 
-/***********************
+***********************
   RAISED BUTTONS
-************************/
+************************
 .btn-danger.raised {
     box-shadow: 0 8px 0 0 darkred;
 }
@@ -113,9 +157,9 @@ p{
     margin-top: 3px;
 }
 
-/***********************
+***********************
   CUSTON BTN VALUES
-************************/
+************************
 .btn:focus, .btn:active:focus, .btn.active:focus {
     outline: 0 none;
 }
@@ -134,22 +178,14 @@ p{
     box-shadow: none;
 }
 
-button{
-    width:50%;
-}
+
+*/
+
 
 .rightAnswer{
-  background-color: rgb(96, 172, 90);
+  background: linear-gradient( #34B36F,  #13AB59);
 }
 
 .wrongAnswer{
-  background-color: rgb(219, 69, 83);
-}
-
-.card{
-    width: 40%;
-}
-.center-btn{
-    width: 30%;
-    margin: 20px;
+  background: linear-gradient( #E44172,  #DA1752);
 }

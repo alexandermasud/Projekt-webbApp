@@ -3,19 +3,13 @@
     font-weight: bold;
 }
 
-.jumbotron{
-  background-color: rgba(0, 0, 0, 0.4);
-  width: 80%;
-  float: none;
-  margin: 0 auto;
-  margin-top: 70px;
-}
+
 
 .modal{
   color: white;
 }
 .modal-content{
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.8);
   margin-top: 50px;
 }
 .modal-header{
