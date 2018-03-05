@@ -1,3 +1,5 @@
+
+
 .jumbotron{
   background-color: rgba(0, 0, 0, 0.4);
   width: 80%;
@@ -49,7 +51,7 @@ p{
     box-shadow: 0 8px 0 0 darkgreen;
 }
 .btn-success.raised:active, .btn-success.raised.active {
-    background: green;
+    background: #30CB00;
     box-shadow: none;
     margin-bottom: -3px;
     margin-top: 3px;
@@ -71,11 +73,11 @@ p{
 }
 
 .btn-success {
-    background: green;
+    background: #30CB00;
     color: #ffffff;
 }
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .dropdown-toggle.btn-success {
-    background: green;
+    background: #30CB00;
 }
 .btn-success:active, .btn-success.active {
     background: darkgreen;
