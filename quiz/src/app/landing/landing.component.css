@@ -21,3 +21,8 @@ img{
 .qBtn{
   margin: 5px auto 5px auto;
 }
+img[_ngcontent-c3]{
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+}
