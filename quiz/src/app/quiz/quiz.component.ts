@@ -133,7 +133,8 @@ export class QuizComponent implements OnInit {
   clickTrueFalse(buttonAnswer) {
     this.currentPlayerAnswer = buttonAnswer
     if (this.currentPlayerAnswer == this.currentAnswer) {
-      this.showGameClass = 'jumbotron col-lg-6 animated rightAnswer'
+
+
       // Ger p1 eller p2 poäng om rätt svar
       if(this.currentPlayer == 'Player1'){
         this.p1Score++;
@@ -143,11 +144,14 @@ export class QuizComponent implements OnInit {
       }
 
       this.playerScore++;
+      this.showGameClass = 'jumbotron col-lg-6 rightAnswer';
+      setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight rightAnswer'}, 1000);
       console.log('Right!');
 
     }
     else {
-      this.showGameClass = 'jumbotron col-lg-6 animated wrongAnswer'
+      this.showGameClass = 'jumbotron col-lg-6 wrongAnswer'
+      setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight wrongAnswer'}, 1000);
       console.log('WRONG!')
     }
 
@@ -170,8 +174,9 @@ export class QuizComponent implements OnInit {
       this.endGame();
     }
     else {
-      this.currentRound++;
-      this.playGame();
+      setTimeout( () => {this.currentRound++}, 2000);
+      setTimeout( () => {this.playGame()}, 2000);
+      setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeInLeft'}, 2000);
     }
   }
 

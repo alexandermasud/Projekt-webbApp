@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div *ngIf="showP1P2">
-        {{ currentPlayer }}
+        <h3>Now it is: <b>{{ currentPlayer }}</b>'s turn</h3>
       </div>
     </div>
     <div class="row">
@@ -22,16 +22,15 @@
 </div>
 
 <!-- SKRIV RESULT HTML HÄR -->
-<div *ngIf="showResult" class="jumbotron col-lg-6">
+<div *ngIf="showResult" class="jumbotron">
   <h2>You got {{ playerScore }} points!</h2>
 
 
 
   <h3>Post on scoreboard?</h3>
-  <button class="btn btn-success btn-lg col-10 col-sm-4 col-md-4 col-lg-2 offset-3 qBtn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+  <button class="btn btn-green btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
     aria-controls="collapseExample">Yes</button>
-  <button class="btn btn-warning btn-lg col-10 col-sm-4 col-md-4 col-lg-2 offset-3 qBtn" routerLink="/">No</button>
-    <div class="collapse" id="collapseExample">
+  <div class="collapse" id="collapseExample">
     <div class="card">
       <form ngNativeValidate #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
         <div class="form-group">
@@ -41,15 +40,18 @@
       </form>
     </div>
   </div>
-</div>
+  <button class="btn btn-red btn-lg btn-lg" routerLink="/">No</button>
 
-<div *ngIf="showResult2Players" class="jumbotron col-lg-6">
+
+
+</div>
+<div *ngIf="showResult2Players">
 
   <h2>{{ resultP1P2 }}</h2>
 
   <div *ngIf="onlyOnWinner">
     <h3>Post on scoreboard?</h3>
-    <button class="btn btn-orange btn-lg col-10 col-sm-4 col-md-4 col-lg-2 offset-3 qBtn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+    <button class="btn btn-green btn-lg" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
       aria-controls="collapseExample">Yes</button>
     <div class="collapse" id="collapseExample">
       <div class="card">
@@ -61,5 +63,7 @@
         </form>
       </div>
     </div>
-    <button class="btn btn-orange btn-lg col-10 col-sm-4 col-md-4 col-lg-2 offset-3 qBtn" routerLink="/">No</button>
+    <button class="btn btn-red btn-lg btn-lg" routerLink="/">No</button>
+
+
   </div>
