@@ -16,10 +16,14 @@
 }
 .modal-content{
   background-color: rgba(0, 0, 0, 0.4);
+  margin-top: 50px;
 }
 .modal-header{
   border: 0px;
 }
 .modal-footer{
   border: 0px;
+}
+table{
+  color: white;
 }
