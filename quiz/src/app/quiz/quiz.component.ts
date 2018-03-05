@@ -180,20 +180,17 @@ export class QuizComponent implements OnInit {
 
   }
   onPostScoreboard() {
-
-      this.router.navigate(['scoreboard/' + this.playerScore + '/' + this.playerName + '']);
-
       let oldItems = JSON.parse(localStorage.getItem('players')) || [];
-      let newItem = { 'playerName': this.playerName , 'playerScore': this.playerScore};
-
+      let newItem = {'playerName': this.playerName , 'playerScore': this.playerScore};
       oldItems.push(newItem);
-      oldItems.sort(function(obj1, obj2){
-        return obj2.playerScore - obj1.playerScore;
-      });
       localStorage.setItem('players', JSON.stringify(oldItems));
-
+      this.router.navigate(['scoreboard/' + this.playerScore + '/' + this.playerName + '']);
   }
-
+  // Får via HTML formulär användarens username
+  onSubmit(value: any){
+    this.playerName = value.username;
+    this.onPostScoreboard();
+  }
 
 
 
