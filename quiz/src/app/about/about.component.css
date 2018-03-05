@@ -1,36 +1,14 @@
-.btn{
-  padding: 20px;
-  margin: 30px;
+.whiteText{
+  color: white;
 }
-.jumbotron{
-  background-color: rgba(0, 0, 0, 0.4);
-  width: 80%;
-  float: none;
-  margin: 0 auto;
-  border-radius: 10px;
-}
-.jumbotron-fluid{
-  margin-top: 90px;
-}
-.avatar {
-  vertical-align: middle;
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  margin: 12px;
-}
-#CenterPic{
-  display: table;
-  margin: 0 auto;
-  justify-content: space-between;
-}
-p{
-  color: #fff;
+a:hover{
+  color: #FF9248;
 }
 
-h3{
-  text-decoration: underline;
-font-weight: bold;
-color: white;
+img{
+  height: 25%;
+}
 
+.iconRow{
+  margin-top: 40px;
 }
