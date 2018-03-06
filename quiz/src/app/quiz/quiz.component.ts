@@ -176,12 +176,8 @@ export class QuizComponent implements OnInit {
       
     }
 
-<<<<<<< HEAD
   
     // Togglar mellan player 1 och 2 om 2player
-=======
-    // Toggles between player 1 and 2 if 2player
->>>>>>> a50ecb1cc3aba36409ecc53134d07b536e9ebf69
     if(this.showP1P2){
 
       if(this.currentPlayer == 'Player 1'){
