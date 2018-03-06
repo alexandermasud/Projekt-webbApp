@@ -1,3 +1,13 @@
+
+<div *ngIf="showMode" class="jumbotron col-lg-6 animated fadeIn">
+  
+    <h3 class="text-center">Choose mode: </h3>
+    <button (click)="mode='1'; setMode(mode)" class="btn btn-orange btn-lg btnOne">One player</button>
+    <button (click)="mode='2'; setMode(mode)" class="btn btn-purple btn-lg">Multiplayer</button>
+
+</div>
+
+
 <div *ngIf="showCategory" class="jumbotron col-lg-6 animated fadeIn">
     <!-- SKRIV KATEGORI HTML HÄR -->
     <h3>Choose category: </h3>

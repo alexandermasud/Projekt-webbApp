@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LandingComponent } from './landing/landing.component';
-import { IntroComponent } from './intro/intro.component';
 import { QuizSetupComponent } from './quiz-setup/quiz-setup.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { ScoreBoardComponent } from './score-board/score-board.component';
@@ -23,8 +22,7 @@ import { HttpService } from '../app/quiz/quiz.service';
 // Routes för applikationen
 const appRoutes: Routes = [
   { path: '', component: LandingComponent },
-  { path: 'intro', component: IntroComponent },
-  { path: 'quizsetup/:playermode', component: QuizSetupComponent },
+  { path: 'quizsetup', component: QuizSetupComponent },
   { path: 'quiz/:mode/:category/:difficulty', component: QuizComponent },
   { path: 'scoreboard', component: ScoreBoardComponent},
   { path: 'scoreboard/:playerscore/:playername', component: ScoreBoardComponent},
@@ -36,7 +34,6 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     LandingComponent,
-    IntroComponent,
     QuizSetupComponent,
     QuizComponent,
     ScoreBoardComponent,
