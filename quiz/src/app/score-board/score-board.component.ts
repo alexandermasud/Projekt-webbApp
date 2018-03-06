@@ -14,7 +14,7 @@ export class ScoreBoardComponent implements OnInit {
   userName: string;
   scores: any = [{name: 'Alexander', score: 5739},{name: 'Viktor', score: 2}];
 
-
+  // Cleares the scoreboard
   clearScoreboard(deleteScore) {
     if(deleteScore){
       localStorage.removeItem('players');

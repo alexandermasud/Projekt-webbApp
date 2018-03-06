@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class QuizComponent implements OnInit {
 
-
   showP1P2: boolean = false;
   currentPlayer: string;
   p1Score: number = 0;
@@ -36,7 +35,7 @@ export class QuizComponent implements OnInit {
   allAnswers: any[];
 
   currentRound: number = 0;
-  // ongetquiz för att ändra 2player
+  // ongetquiz to change player2
   endAtRound: number = 5;
   currentQuestion: string;
   currentAnswer: string;
@@ -57,7 +56,7 @@ export class QuizComponent implements OnInit {
   endGame() {
 
 
-    // Körs vid 2player
+    // Runs at 2 players
     if (this.showP1P2 == true){
 
       this.showResult2Players = true;
@@ -83,7 +82,7 @@ export class QuizComponent implements OnInit {
       this.showResult2Players = true;
 
     }
-    // Körs vid 1player
+    // Runs at 1 player
     else if (this.showP1P2 == false){
       this.showGame = false;
       this.showResult = true;
@@ -92,11 +91,11 @@ export class QuizComponent implements OnInit {
   }
 
   onGetQuiz() {
-
+    // If mode = 1, gets 5 questions from the API
     if (this.choosenMode == 1){
       this.choosenAmountOfQuestions = 5;
     }
-
+    // If mode = 2, gets 10 questions from the API
     else if (this.choosenMode == 2){
       this.endAtRound = 10;
       this.choosenAmountOfQuestions = 10;
@@ -142,7 +141,7 @@ export class QuizComponent implements OnInit {
     if (this.currentPlayerAnswer == this.currentAnswer) {
 
 
-      // Ger p1 eller p2 poäng om rätt svar
+      // Gives P1 or P2 points if given correct answer
       if(this.currentPlayer == 'Player 1'){
         this.p1Score++;
       }
@@ -177,8 +176,12 @@ export class QuizComponent implements OnInit {
       
     }
 
+<<<<<<< HEAD
   
     // Togglar mellan player 1 och 2 om 2player
+=======
+    // Toggles between player 1 and 2 if 2player
+>>>>>>> a50ecb1cc3aba36409ecc53134d07b536e9ebf69
     if(this.showP1P2){
 
       if(this.currentPlayer == 'Player 1'){
@@ -194,7 +197,7 @@ export class QuizComponent implements OnInit {
 
 
     console.log('SCORE: ' + this.playerScore);
-    // Avsultar spel om frågor är slut
+    // Ends game if questions are finished
     if (this.endAtRound - 1 == this.currentRound) {
       setTimeout( () => {this.endGame()}, 1000);
     }
@@ -231,7 +234,7 @@ export class QuizComponent implements OnInit {
     localStorage.setItem('players', JSON.stringify(oldItems));
 
   }
-  // Får via HTML formulär användarens username
+  // Gets via HTML form users username
   onSubmit(value: any){
     this.playerName = value.username;
     this.onPostScoreboard();
@@ -240,7 +243,7 @@ export class QuizComponent implements OnInit {
 
 
   ngOnInit() {
-    // Hämtar via URL ut vilken kategori och svårighetsgrad spelaren valde
+    // Fetches via URL the category and difficulty level the user choose
     this.choosenMode = this.activatedRoute.snapshot.params.mode;
     this.choosenCategory = this.activatedRoute.snapshot.params.category;
     this.choosenDifficulty = this.activatedRoute.snapshot.params.difficulty;
