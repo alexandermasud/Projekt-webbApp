@@ -34,7 +34,6 @@
 .questions p{
   font-size: 20px;
 }
-
 button{
   width:100%;
 }
@@ -195,11 +194,20 @@ RÖD KNAPP
 
 */
 
-
 .rightAnswer{
   background: linear-gradient( #34B36F,  #13AB59);
 }
 
 .wrongAnswer{
   background: linear-gradient( #E44172,  #DA1752);
+}
+@media screen and (device-aspect-ratio: 40/71) {
+  .questions p{
+    font-size: 16px;
+  }
+}
+@media screen and (device-aspect-ratio: 2/3) {
+  .questions p{
+    font-size: 16px;
+  }
 }
