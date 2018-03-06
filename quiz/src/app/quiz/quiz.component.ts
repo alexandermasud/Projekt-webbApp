@@ -115,6 +115,8 @@ export class QuizComponent implements OnInit {
       );
   }
 
+  //Loops the result from the api call and adds all the questions and correct answers into arrays.
+  //The functions takes the first question in the array when it is run.
   loopQuestions() {
     
     let data = JSON.parse(this.getData);
@@ -135,6 +137,8 @@ export class QuizComponent implements OnInit {
     this.currentAnswer = this.allAnswers[0];
   }
 
+  //Checks which answerbutton has been pressed. The function adds +1 if the answer is correct
+  //The function handels animations of questions, and plays audio files based on the players answer.
   clickTrueFalse(buttonAnswer) {
     
     this.currentPlayerAnswer = buttonAnswer
@@ -203,13 +207,16 @@ export class QuizComponent implements OnInit {
       setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeInLeft'}, 1000);
     }
   }
-
+  
   playGame() {
     let i: number = this.currentRound;
     this.currentQuestion = this.allQuestions[i];
     this.currentAnswer = this.allAnswers[i];
     this.buttonActive = false;
   }
+
+  //Posts the players result to a scoreboard. The result is saved in localStorage.
+  //Sorts the results by the score property from higest to lowest.
   onPostScoreboard() {
 
     this.router.navigate(['scoreboard/' + this.playerScore + '/' + this.playerName + '']);
