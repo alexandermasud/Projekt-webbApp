@@ -90,11 +90,11 @@ export class QuizComponent implements OnInit {
   }
 
   onGetQuiz() {
-    // If 1 gets 5 questions from the API
+    // If mode = 1, gets 5 questions from the API
     if (this.choosenMode == 1){
       this.choosenAmountOfQuestions = 5;
     }
-    // If 2 gets 10 questions from the API
+    // If mode = 2, gets 10 questions from the API
     else if (this.choosenMode == 2){
       this.endAtRound = 10;
       this.choosenAmountOfQuestions = 10;
@@ -139,7 +139,7 @@ export class QuizComponent implements OnInit {
     if (this.currentPlayerAnswer == this.currentAnswer) {
 
 
-      // Ger p1 eller p2 poäng om rätt svar
+      // Gives P1 or P2 points if given correct answer
       if(this.currentPlayer == 'Player 1'){
         this.p1Score++;
       }
@@ -167,7 +167,7 @@ export class QuizComponent implements OnInit {
       console.log('WRONG!')
     }
 
-    // Togglar mellan player 1 och 2 om 2player
+    // Toggles between player 1 and 2 if 2player
     if(this.showP1P2){
 
       if(this.currentPlayer == 'Player 1'){
@@ -183,7 +183,7 @@ export class QuizComponent implements OnInit {
 
 
     console.log('SCORE: ' + this.playerScore);
-    // Avsultar spel om frågor är slut
+    // Ends game if questions are finished
     if (this.endAtRound - 1 == this.currentRound) {
       setTimeout( () => {this.endGame()}, 1000);
     }
@@ -220,7 +220,7 @@ export class QuizComponent implements OnInit {
     localStorage.setItem('players', JSON.stringify(oldItems));
 
   }
-  // Får via HTML formulär användarens username
+  // Gets via HTML form users username
   onSubmit(value: any){
     this.playerName = value.username;
     this.onPostScoreboard();
@@ -229,7 +229,7 @@ export class QuizComponent implements OnInit {
 
 
   ngOnInit() {
-    // Hämtar via URL ut vilken kategori och svårighetsgrad spelaren valde
+    // Fetches via URL the category and difficulty level the user choose
     this.choosenMode = this.activatedRoute.snapshot.params.mode;
     this.choosenCategory = this.activatedRoute.snapshot.params.category;
     this.choosenDifficulty = this.activatedRoute.snapshot.params.difficulty;

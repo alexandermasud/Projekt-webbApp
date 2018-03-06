@@ -10,12 +10,12 @@ export class QuizSetupComponent implements OnInit {
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
-  // Anger om kategorier och svårighetsgrad ska synas på html
+  // Specifies if category and difficulty shall be visible on html 
   showMode: boolean = true;
   showCategory: boolean = false;
   showDifficulty: boolean = false;
 
-  // Vald kategori och svårighetsgrad
+  // Choosen category and difficulty level
   choosenMode: string;
   choosenCategory: string;
   choosenDifficulty: string;
@@ -30,7 +30,7 @@ export class QuizSetupComponent implements OnInit {
 
   }
 
-  // Tar bort kategorierna och lägger till svårighetsgraderna på html
+  // Removes categories and adds difficultylevels on html 
   setCategory(category){
     this.choosenCategory = category;
     this.showCategory = false;
