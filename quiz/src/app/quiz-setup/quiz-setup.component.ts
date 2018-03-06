@@ -14,6 +14,7 @@ export class QuizSetupComponent implements OnInit {
   showMode: boolean = true;
   showCategory: boolean = false;
   showDifficulty: boolean = false;
+  showMediumButton: boolean = true;
 
   // Choosen category and difficulty level
   choosenMode: string;
@@ -48,6 +49,9 @@ export class QuizSetupComponent implements OnInit {
     if(category == '21' || category == '27' || category == '18' || category == '32'){
       this.showHardButton = false;
     }
+    if (category == '32'){
+      this.showMediumButton = false;
+    }
 
     if(this.choosenCategory == '9'){
       this.breadCategory = 'General';
@@ -62,10 +66,10 @@ export class QuizSetupComponent implements OnInit {
       this.breadCategory = 'Animals';
     }
     else if(this.choosenCategory == '18'){
-      this.breadCategory = 'Sci- Computers';
+      this.breadCategory = 'Sci-Computers';
     }
     else if(this.choosenCategory == '32'){
-      this.breadCategory = 'Cartoons';
+      this.breadCategory = 'Starwars';
     }
 
   }

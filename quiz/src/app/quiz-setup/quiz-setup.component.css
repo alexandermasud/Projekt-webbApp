@@ -10,7 +10,7 @@ h3{
 
 .breadcrumb{
   margin-top: -20px;
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 a {
@@ -20,4 +20,12 @@ a {
   text-decoration: underline;
   color: orange;
   font-weight: bold;
+}
+
+
+/*  XS  */
+@media (max-width: 575.98px) {
+  .showBreadCrumbs nav ol li{
+    font-size: 10px;
+  }
 }
