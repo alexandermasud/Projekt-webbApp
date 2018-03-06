@@ -1,11 +1,11 @@
-// Angular moduler
+// Angular modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-// Applikationens komponenter
+// The Application components 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LandingComponent } from './landing/landing.component';
@@ -15,11 +15,11 @@ import { ScoreBoardComponent } from './score-board/score-board.component';
 import { AboutComponent } from './about/about.component';
 
 
-// Applikationens API service
+// The Applikations API service
 import { HttpService } from '../app/quiz/quiz.service';
 
 
-// Routes för applikationen
+// Routes for the Application
 const appRoutes: Routes = [
   { path: '', component: LandingComponent },
   { path: 'quizsetup', component: QuizSetupComponent },
