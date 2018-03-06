@@ -20,6 +20,7 @@ export class QuizComponent implements OnInit {
   onlyOnWinner: boolean = false;
   onlyOnTie: boolean = false;
 
+  buttonActive: boolean = false;
   // -------------------------
 
   choosenMode: number;
@@ -116,7 +117,7 @@ export class QuizComponent implements OnInit {
   }
 
   loopQuestions() {
-
+    
     let data = JSON.parse(this.getData);
     let questions: any[] = [];
     let answers: any[] = [];
@@ -136,6 +137,7 @@ export class QuizComponent implements OnInit {
   }
 
   clickTrueFalse(buttonAnswer) {
+    
     this.currentPlayerAnswer = buttonAnswer
     if (this.currentPlayerAnswer == this.currentAnswer) {
 
@@ -155,6 +157,10 @@ export class QuizComponent implements OnInit {
       audio.load();
       audio.play();
       setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight rightAnswer'}, 500);
+      setTimeout( () => {this.buttonActive = true}, 10);
+      
+      
+
       console.log('Right!');
 
     }
@@ -165,9 +171,13 @@ export class QuizComponent implements OnInit {
       audio.load();
       audio.play();
       setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight wrongAnswer'}, 500);
+      setTimeout( () => {this.buttonActive = true}, 10);
+      
       console.log('WRONG!')
+      
     }
 
+  
     // Togglar mellan player 1 och 2 om 2player
     if(this.showP1P2){
 
@@ -199,7 +209,7 @@ export class QuizComponent implements OnInit {
     let i: number = this.currentRound;
     this.currentQuestion = this.allQuestions[i];
     this.currentAnswer = this.allAnswers[i];
-
+    this.buttonActive = false;
   }
   onPostScoreboard() {
 
