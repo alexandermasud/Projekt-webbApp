@@ -1,4 +1,4 @@
-<div class="container jumbotron col-lg-6">
+<div class="container jumbotron col-lg-6 animated fadeIn">
 
   <div class="row col-lg-8 offset-lg-2">
     <table class="table table-hover">
@@ -16,29 +16,27 @@
       </tr>
     </tbody>
   </table>
-  <div class="row">
-
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-lg btn-outline-danger" data-toggle="modal" data-target="#exampleModal">Clear Scoreboard</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Sure you want to clear the scoreboard?</h5>
-
-      </div>
-
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-red" (click)="deleteScore = true; clearScoreboard(deleteScore)" data-dismiss="modal">Clear</button>
-       <button type="button" class="btn btn-blue" data-dismiss="modal">Cancel</button>
-      </div>
-    </div>
+  <div *ngIf="showClearButton">
+  <button type="button" class="btn btn-lg btn-purple" data-toggle="modal" data-target="#exampleModal">Clear Scoreboard</button>
+  </div>
   </div>
 </div>
 
+<div class="row">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Sure you want to clear the scoreboard?</h5>
+    </div>
+
+    <div class="modal-footer">
+    <button type="button" class="btn btn-red" (click)="deleteScore = true; clearScoreboard(deleteScore)" data-dismiss="modal">Clear</button>
+     <button type="button" class="btn btn-blue" data-dismiss="modal">Cancel</button>
+    </div>
   </div>
-  </div>
+</div>
+</div>
+
 </div>

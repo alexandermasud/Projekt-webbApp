@@ -12,7 +12,9 @@ export class ScoreBoardComponent implements OnInit {
 
   userScore: number;
   userName: string;
-  scores: any = [{name: 'Alexander', score: 5739},{name: 'Viktor', score: 2}];
+  scores: any = [];
+
+  showClearButton: boolean = true;
 
   // Cleares the scoreboard
   clearScoreboard(deleteScore) {
@@ -22,8 +24,8 @@ export class ScoreBoardComponent implements OnInit {
       while(tableBody.firstChild) {
         tableBody.removeChild(tableBody.firstChild);
       }
-      
-      
+      this.showClearButton = false;
+
     }
     else{
       console.log("Players were not removed.");
@@ -36,6 +38,10 @@ export class ScoreBoardComponent implements OnInit {
     let a = localStorage.getItem('players');
     this.scores = JSON.parse(a);
     console.log(this.scores);
+
+    if (this.scores ==  null){
+      this.showClearButton = false;
+    }
 
   }
 }
