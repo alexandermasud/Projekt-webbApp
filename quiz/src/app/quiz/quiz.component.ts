@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class QuizComponent implements OnInit {
 
+  rightSound = new Audio();
+  wrongSound = new Audio();
+
   showP1P2: boolean = false;
   currentPlayer: string;
   p1Score: number = 0;
@@ -175,10 +178,8 @@ export class QuizComponent implements OnInit {
 
       this.playerScore++;
       this.showGameClass = 'jumbotron col-lg-6 animated pulse rightAnswer';
-      let audio = new Audio();
-      audio.src = "../../assets/right.wav";
-      audio.load();
-      audio.play();
+
+      this.rightSound.play();
       setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight rightAnswer'}, 500);
       setTimeout( () => {this.buttonActive = true}, 10);
 
@@ -187,10 +188,8 @@ export class QuizComponent implements OnInit {
 
     else {
       this.showGameClass = 'jumbotron col-lg-6 animated pulse wrongAnswer'
-      let audio = new Audio();
-      audio.src = "../../assets/wrong.wav";
-      audio.load();
-      audio.play();
+
+      this.wrongSound.play();
       setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight wrongAnswer'}, 500);
       setTimeout( () => {this.buttonActive = true}, 10);
 
@@ -261,6 +260,12 @@ export class QuizComponent implements OnInit {
     this.choosenDifficulty = this.activatedRoute.snapshot.params.difficulty;
 
     console.log('QUIZMODE: ' + this.choosenMode);
+
+    this.rightSound.src ="../../assets/right.wav";
+    this.wrongSound.src = "../../assets/wrong.wav";
+    this.rightSound.load();
+    this.wrongSound.load();
+
 
     this.onGetQuiz();
   }
