@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class QuizComponent implements OnInit {
 
-
   showP1P2: boolean = false;
   currentPlayer: string;
   p1Score: number = 0;
@@ -35,7 +34,7 @@ export class QuizComponent implements OnInit {
   allAnswers: any[];
 
   currentRound: number = 0;
-  // ongetquiz för att ändra 2player
+  // ongetquiz to change player2
   endAtRound: number = 5;
   currentQuestion: string;
   currentAnswer: string;
@@ -56,7 +55,7 @@ export class QuizComponent implements OnInit {
   endGame() {
 
 
-    // Körs vid 2player
+    // Runs at 2 players
     if (this.showP1P2 == true){
 
       this.showResult2Players = true;
@@ -82,7 +81,7 @@ export class QuizComponent implements OnInit {
       this.showResult2Players = true;
 
     }
-    // Körs vid 1player
+    // Runs at 1 player
     else if (this.showP1P2 == false){
       this.showGame = false;
       this.showResult = true;
@@ -91,11 +90,11 @@ export class QuizComponent implements OnInit {
   }
 
   onGetQuiz() {
-
+    // If 1 gets 5 questions from the API
     if (this.choosenMode == 1){
       this.choosenAmountOfQuestions = 5;
     }
-
+    // If 2 gets 10 questions from the API
     else if (this.choosenMode == 2){
       this.endAtRound = 10;
       this.choosenAmountOfQuestions = 10;
