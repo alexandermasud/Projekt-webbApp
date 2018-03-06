@@ -48,7 +48,7 @@ export class QuizComponent implements OnInit {
   showGame: boolean = true;
   showGameClass: string = 'jumbotron col-lg-6 animated fadeInLeft';
 
-  starwarsQuestions : any[] = {"response_code":0,"results":[
+  starwarsQuestions: any = {"response_code":0,"results":[
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":" *********SKRIV FRÅGA HÄR**********","correct_answer":" **********SVARA HÄR False ELLER True *********","incorrect_answers":["******* SKRIV FEL SVAR HÄR False ELLER True **********"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"It is automatically considered entrapment in the United States if the police sell you illegal substances without revealing themselves.","correct_answer":"False","incorrect_answers":["True"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Nutella is produced by the German company Ferrero.","correct_answer":"False","incorrect_answers":["True"]},
