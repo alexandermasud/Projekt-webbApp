@@ -1,4 +1,11 @@
-
+.jumbotron {
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 90%;
+    float: none;
+    margin: 0 auto;
+    color: white;
+    margin-top: 20px;
+}
 .pulse {
   -webkit-animation: pulse 0.3s; /* Safari 4+ */
   -moz-animation:    pulse 0.3s; /* Fx 5+ */
@@ -60,6 +67,9 @@ p{
 .removeSideScroll{
   max-width: 100%;
   overflow: hidden;
+}
+.btn{
+  margin-bottom: 12px;
 }
 
 /*

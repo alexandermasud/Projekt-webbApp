@@ -2,9 +2,6 @@
     color: black;
     font-weight: bold;
 }
-
-
-
 .modal{
   color: white;
 }
@@ -18,11 +15,12 @@
 .modal-footer{
   border: 0px;
 }
-
 table{
   color: white;
 }
-
 th {
   color: orange;
+}
+.btn-purple{
+  margin: 20px;
 }
