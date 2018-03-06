@@ -45,7 +45,7 @@ export class QuizComponent implements OnInit {
   playerName: string;
 
   showResult: boolean = false;
-  showGame: boolean = true;
+  showGame: boolean = false;
   showGameClass: string = 'jumbotron col-lg-6 animated fadeInLeft';
 
   starwarsQuestions: any = {"response_code":0,"results":[
@@ -154,6 +154,7 @@ export class QuizComponent implements OnInit {
 
     this.currentQuestion = this.allQuestions[0];
     this.currentAnswer = this.allAnswers[0];
+    this.showGame = true;
   }
 
   //Checks which answerbutton has been pressed. The function adds +1 if the answer is correct
