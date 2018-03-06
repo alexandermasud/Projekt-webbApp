@@ -21,6 +21,7 @@ table{
 th {
   color: orange;
 }
-.btn-purple{
+.btn-outline-danger{
   margin: 20px;
+  color: white;
 }

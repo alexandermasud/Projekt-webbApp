@@ -7,3 +7,17 @@ h3{
     margin: 0 auto;
     margin-bottom: 12px;
 }
+
+.breadcrumb{
+  margin-top: -20px;
+  background-color: transparent; 
+}
+
+a {
+  color: white;
+}
+.active{
+  text-decoration: underline;
+  color: yellow;
+  font-weight: bold;
+}
