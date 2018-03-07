@@ -56,7 +56,7 @@ export class QuizComponent implements OnInit {
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Jango Fetts armor is Mandalorian","correct_answer":"True","incorrect_answers":["False"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"At one point Star Wars: Episode VI - Return of The Jedi was going to be called Revenge of the Jedi.","correct_answer":"True","incorrect_answers":["False"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"The wookie homeworld i called Naboo","correct_answer":"False","incorrect_answers":["True"]},
-    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"The Sun rises from the North.","correct_answer":"False","incorrect_answers":["True"]},
+    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"The species of Jar Jar Binks is Toydarian","correct_answer":"False","incorrect_answers":["True"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"In 2010, Twitter and the United States Library of Congress partnered together to archive every tweet by American citizens.","correct_answer":"True","incorrect_answers":["False"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Adolf Hitler was born in Australia. ","correct_answer":"False","incorrect_answers":["True"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"When you cry in space, your tears stick to your face.","correct_answer":"True","incorrect_answers":["False"]},
