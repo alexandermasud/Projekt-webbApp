@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-// The Application components 
+// The Application components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LandingComponent } from './landing/landing.component';
@@ -15,7 +15,7 @@ import { ScoreBoardComponent } from './score-board/score-board.component';
 import { AboutComponent } from './about/about.component';
 
 
-// The Applikations API service
+// The Applications API service
 import { HttpService } from '../app/quiz/quiz.service';
 
 

@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class QuizComponent implements OnInit {
 
-  rightSound = new Audio();
-  wrongSound = new Audio();
+  rightSound = new Audio('assets/right.mp3');
+  wrongSound = new Audio('assets/wrong.mp3');
 
   showP1P2: boolean = false;
   currentPlayer: string;
@@ -261,10 +261,6 @@ export class QuizComponent implements OnInit {
 
     console.log('QUIZMODE: ' + this.choosenMode);
 
-    this.rightSound.src ="../../assets/right.wav";
-    this.wrongSound.src = "../../assets/wrong.wav";
-    this.rightSound.load();
-    this.wrongSound.load();
 
 
     this.onGetQuiz();
