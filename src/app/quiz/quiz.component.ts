@@ -13,29 +13,29 @@ export class QuizComponent implements OnInit {
   rightSound = new Audio('assets/right.mp3');
   wrongSound = new Audio('assets/wrong.mp3');
 
-  showP1P2: boolean = false;
-  currentPlayer: string;
+  showP1P2: boolean = false;//Configures the gamemode to 2 player.
+  currentPlayer: string;//The player who is answering the question.
   p1Score: number = 0;
   p2Score: number = 0;
-  showResult2Players: boolean = false;
-  resultP1P2: string;
-  onlyOnWinner: boolean = false;
-  onlyOnTie: boolean = false;
+  showResult2Players: boolean = false;//Shows the result div for 2 player mode.
+  resultP1P2: string;//Show the winner of the 2 player mode.
+  onlyOnWinner: boolean = false;//If there is a winner shows appropriet div.
+  onlyOnTie: boolean = false;//If the game is tied show appropriet div.
 
-  buttonActive: boolean = false;
+  buttonActive: boolean = false;//Temporarily disables the answer buttons.
   // -------------------------
 
-  choosenMode: number;
-  choosenCategory: string;
-  choosenDifficulty: string;
-  choosenAmountOfQuestions: number;
+  choosenMode: number;//Saves the gamemode.
+  choosenCategory: string;//Saves the category
+  choosenDifficulty: string;//Saves the difficulty 
+  choosenAmountOfQuestions: number;//Saves the questions
 
   playerMode: string;
 
-  getData: string;
+  getData: string;//Contains the respnse data from the API.
 
-  allQuestions: any[];
-  allAnswers: any[];
+  allQuestions: any[];//Contains all the questions from the API
+  allAnswers: any[];//Contains all the correct answers to the questions.
 
   currentRound: number = 0;
   // ongetquiz to change player2
@@ -47,15 +47,15 @@ export class QuizComponent implements OnInit {
   playerScore: number = 0;
   playerName: string;
 
-  showResult: boolean = false;
-  showGame: boolean = false;
+  showResult: boolean = false;//Shows the result for 1 player.
+  showGame: boolean = false;//Main game form.
   showGameClass: string = 'jumbotron col-lg-6 animated fadeInLeft';
 
   starwarsQuestions: any = {"response_code":0,"results":[
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":" *********SKRIV FRÅGA HÄR**********","correct_answer":" **********SVARA HÄR False ELLER True *********","incorrect_answers":["******* SKRIV FEL SVAR HÄR False ELLER True **********"]},
-    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"It is automatically considered entrapment in the United States if the police sell you illegal substances without revealing themselves.","correct_answer":"False","incorrect_answers":["True"]},
-    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Nutella is produced by the German company Ferrero.","correct_answer":"False","incorrect_answers":["True"]},
-    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"&quot;Ananas&quot; is mostly used as the word for Pineapple in other languages.","correct_answer":"True","incorrect_answers":["False"]},
+    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Jango Fetts armor is Mandalorian","correct_answer":"True","incorrect_answers":["False"]},
+    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"At one point Star Wars: Episode VI - Return of The Jedi was going to be called Revenge of the Jedi.","correct_answer":"True","incorrect_answers":["False"]},
+    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"The wookie homeworld i called Naboo","correct_answer":"False","incorrect_answers":["True"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"The Sun rises from the North.","correct_answer":"False","incorrect_answers":["True"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"In 2010, Twitter and the United States Library of Congress partnered together to archive every tweet by American citizens.","correct_answer":"True","incorrect_answers":["False"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Adolf Hitler was born in Australia. ","correct_answer":"False","incorrect_answers":["True"]},
