@@ -17,19 +17,13 @@ export class ScoreBoardComponent implements OnInit {
   showClearButton: boolean = true;
 
   // Cleares the scoreboard
-  clearScoreboard(deleteScore) {
-    if(deleteScore){
+  clearScoreboard() {
       localStorage.removeItem('players');
       let tableBody = document.getElementById("displayPlayers");
       while(tableBody.firstChild) {
         tableBody.removeChild(tableBody.firstChild);
       }
       this.showClearButton = false;
-
-    }
-    else{
-      console.log("Players were not removed.");
-    }
   }
 
   ngOnInit() {
