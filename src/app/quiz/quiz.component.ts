@@ -61,7 +61,8 @@ export class QuizComponent implements OnInit {
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Adolf Hitler was born in Australia. ","correct_answer":"False","incorrect_answers":["True"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"When you cry in space, your tears stick to your face.","correct_answer":"True","incorrect_answers":["False"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"&quot;27 Club&quot; is a term used to refer to a list of famous actors, musicians, and artists who died at the age of 27.","correct_answer":"True","incorrect_answers":["False"]},
-    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.","correct_answer":"False","incorrect_answers":["True"]}
+    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.","correct_answer":"False","incorrect_answers":["True"]},
+     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"The Ewoks that appear in Return of the Jedi, inhabits the forest moon of Endor.","correct_answer":"True","incorrect_answers":["False"]}
   ]};
 
 
