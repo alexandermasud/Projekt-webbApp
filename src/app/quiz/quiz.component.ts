@@ -52,16 +52,14 @@ export class QuizComponent implements OnInit {
   showGameClass: string = 'jumbotron col-lg-6 animated fadeInLeft';
 
   starwarsQuestions: any = {"response_code":0,"results":[
-    {"category":"Starwars","type":"boolean","difficulty":"easy","question":" *********SKRIV FRÅGA HÄR**********","correct_answer":" **********SVARA HÄR False ELLER True *********","incorrect_answers":["******* SKRIV FEL SVAR HÄR False ELLER True **********"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Jango Fetts armor is Mandalorian","correct_answer":"True","incorrect_answers":["False"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"At one point Star Wars: Episode VI - Return of The Jedi was going to be called Revenge of the Jedi.","correct_answer":"True","incorrect_answers":["False"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"The wookie homeworld i called Naboo","correct_answer":"False","incorrect_answers":["True"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"The species of Jar Jar Binks is Toydarian","correct_answer":"False","incorrect_answers":["True"]},
-    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"In 2010, Twitter and the United States Library of Congress partnered together to archive every tweet by American citizens.","correct_answer":"True","incorrect_answers":["False"]},
-    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Adolf Hitler was born in Australia. ","correct_answer":"False","incorrect_answers":["True"]},
-    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"When you cry in space, your tears stick to your face.","correct_answer":"True","incorrect_answers":["False"]},
-    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"&quot;27 Club&quot; is a term used to refer to a list of famous actors, musicians, and artists who died at the age of 27.","correct_answer":"True","incorrect_answers":["False"]},
-    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Dihydrogen Monoxide was banned due to health risks after being discovered in 1983 inside swimming pools and drinking water.","correct_answer":"False","incorrect_answers":["True"]},
+    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Boba Fett is Jango Fetts father","correct_answer":"False","incorrect_answers":["Correct"]},
+    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"There are 10 members in the Jedi Council","correct_answer":"False","incorrect_answers":["True"]},
+    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Yodas lightsaber is green","correct_answer":"True","incorrect_answers":["False"]},
+    {"category":"Starwars","type":"boolean","difficulty":"easy","question":"The mother of Luke and Leia is Padmé Amidala","correct_answer":"True","incorrect_answers":["False"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"The Ewoks that appear in Return of the Jedi, inhabits the forest moon of Endor.","correct_answer":"True","incorrect_answers":["False"]},
     {"category":"Starwars","type":"boolean","difficulty":"easy","question":"Chewbacca is the first mate aboard the Millenium Falcon and Han Solo's trusted companion.","correct_answer":"True","incorrect_answers":["False"]}
   ]};
