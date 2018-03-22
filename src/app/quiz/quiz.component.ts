@@ -27,7 +27,7 @@ export class QuizComponent implements OnInit {
 
   choosenMode: number;//Saves the gamemode.
   choosenCategory: string;//Saves the category
-  choosenDifficulty: string;//Saves the difficulty 
+  choosenDifficulty: string;//Saves the difficulty
   choosenAmountOfQuestions: number;//Saves the questions
 
   playerMode: string;
@@ -167,7 +167,7 @@ export class QuizComponent implements OnInit {
     this.currentPlayerAnswer = buttonAnswer
     if (this.currentPlayerAnswer == this.currentAnswer) {
 
-
+      this.rightSound.play();
       // Gives P1 or P2 points if given correct answer
       if(this.currentPlayer == 'Player 1'){
         this.p1Score++;
@@ -179,21 +179,18 @@ export class QuizComponent implements OnInit {
       this.playerScore++;
       this.showGameClass = 'jumbotron col-lg-6 animated pulse rightAnswer';
 
-      this.rightSound.play();
       setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight rightAnswer'}, 500);
       setTimeout( () => {this.buttonActive = true}, 10);
 
-      console.log('Right!');
     }
 
     else {
+      this.wrongSound.play();
       this.showGameClass = 'jumbotron col-lg-6 animated pulse wrongAnswer'
 
-      this.wrongSound.play();
       setTimeout( () => {this.showGameClass = 'jumbotron col-lg-6 animated fadeOutRight wrongAnswer'}, 500);
       setTimeout( () => {this.buttonActive = true}, 10);
 
-      console.log('WRONG!')
     }
 
     // Togglar mellan player 1 och 2 om 2player
